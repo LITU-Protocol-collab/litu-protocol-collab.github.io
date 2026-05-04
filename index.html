@@ -244,15 +244,32 @@
         /* =========================================
            PAGE 6: 全知大使 Vuvu (包含影片)
            ========================================= */
-        .gov-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-top: 4rem; margin-bottom: 4rem; }
+       .gov-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-top: 4rem; margin-bottom: 4rem; }
         .gov-card { background: var(--card-bg); padding: 2.5rem; border-radius: 10px; border-left: 4px solid var(--nexus-gold); }
         .gov-card h3 { color: var(--nexus-gold); margin-bottom: 1.5rem; font-size: 1.5rem; }
         .vuvu-card-content { display: flex; align-items: center; gap: 2.5rem; }
+        
+        /* 🚨 指定修改：將 VUVU 動畫框強制鎖定為導圓角正方形 */
         .vuvu-video-container {
-            flex: 0 0 200px; max-width: 200px; overflow: hidden;
-            border-radius: 25px; box-shadow: 0 0 25px rgba(212, 175, 55, 0.3); mix-blend-mode: screen; 
+            flex: 0 0 200px; 
+            max-width: 200px; 
+            height: 200px; 
+            overflow: hidden;
+            border-radius: 25px; 
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.3); 
+            mix-blend-mode: screen; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            background-color: #000;
         }
-        .vuvu-video-container video { width: 100%; height: auto; display: block; pointer-events: none; }
+        .vuvu-video-container video { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            display: block; 
+            pointer-events: none; 
+        }
         .vuvu-text-content { flex: 1; }
 
         /* =========================================
