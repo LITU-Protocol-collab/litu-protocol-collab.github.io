@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> 美麗寶島formosa數位圖騰䷢Solana </title>
-    <link rel="icon" href="Gemini_Generated_Image_dep41dep41dep41d_clean.jpg" type="image/jpeg">
+    <link rel="icon" href="$FORMOSA_NEXUS.png" type="image/jpeg">
     <style>
         /* =========================================
            共用設定與變數
@@ -273,26 +273,14 @@
         .vuvu-text-content { flex: 1; }
 
         /* =========================================
-           PAGE 7: 治理哲學 (套用 P6 底圖)
+           PAGE 7: 治理哲學
            ========================================= */
         .governance-section {
             position: relative;
             background-color: var(--dark-bg);
-            background-image: url("Code_Generated_Image(P6).png");
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
             padding: 4rem 0; 
             border-top: 1px solid rgba(212, 175, 55, 0.1);
             border-bottom: 1px solid rgba(212, 175, 55, 0.1);
-        }
-        .governance-section::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(180deg, var(--dark-bg) 0%, rgba(5,10,8,0.5) 20%, rgba(5,10,8,0.5) 80%, var(--dark-bg) 100%);
-            z-index: 1;
-            pointer-events: none;
         }
         .governance-section .container { position: relative; z-index: 2; padding: 0; }
         .governance-section .gov-card { background: rgba(10, 10, 10, 0.75); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
@@ -329,13 +317,31 @@
         .download-title { color: var(--text-light); font-size: 1.1rem; margin: 0; text-align: center; }
 
         /* =========================================
-           新增：PAGE 8.5 開發者錢包區塊樣式
+           新增：PAGE 8.5 開發者錢包 (移入 P6 底圖)
            ========================================= */
         .wallet-section { 
+            position: relative; /* 新增：配合遮罩 */
             text-align: center; 
             background-color: var(--card-bg); 
             border-top: 1px solid rgba(212, 175, 55, 0.1); 
             padding: 4rem 0; 
+            /* 新增：將原本第9頁的 P6 底圖移至此處 */
+            background-image: url("Code_Generated_Image(P6).png");
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+        /* 新增：配合底圖的玻璃擬態漸層遮罩 */
+        .wallet-section::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(180deg, var(--dark-bg) 0%, rgba(5,10,8,0.6) 20%, rgba(5,10,8,0.6) 80%, var(--dark-bg) 100%);
+            z-index: 1; pointer-events: none;
+        }
+        .wallet-section .container {
+            position: relative;
+            z-index: 2;
         }
         .wallet-section h2 { color: var(--nexus-gold); font-size: 2.2rem; margin-bottom: 1rem; }
         .wallet-desc { color: #ccc; font-size: 1.1rem; margin-bottom: 2rem; }
@@ -348,6 +354,8 @@
         }
         .wallet-item {
             background: rgba(10, 20, 17, 0.7);
+            backdrop-filter: blur(8px); /* 讓錢包卡片也有玻璃擬態以配合底圖 */
+            -webkit-backdrop-filter: blur(8px);
             border: 1px solid rgba(212, 175, 55, 0.3);
             border-radius: 12px;
             padding: 1.5rem;
@@ -359,7 +367,7 @@
         }
 
         /* =========================================
-           PAGE 9: 免責聲明 (套用 P6 底圖)
+           PAGE 9: 免責聲明 (移除 P6 底圖，恢復純背景)
            ========================================= */
         .disclaimer-section { 
             position: relative;
@@ -367,17 +375,6 @@
             color: #888; 
             font-size: 0.9rem; 
             border-top: 1px solid #1a1a1a; 
-            background-image: url("Code_Generated_Image(P6).png");
-            background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
-        }
-        .disclaimer-section::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(180deg, var(--dark-bg) 0%, rgba(5,10,8,0.5) 20%, rgba(5,10,8,0.5) 80%, var(--dark-bg) 100%);
-            z-index: 1; pointer-events: none;
         }
         .disclaimer-section .container { position: relative; z-index: 2; }
         .disclaimer-section h2 { color: #bbb; margin-bottom: 1.5rem; font-size: 1.5rem; text-align: center; }
@@ -390,7 +387,7 @@
         .disclaimer-item h4 { color: #ddd; margin-top: 0; margin-bottom: 0.5rem; }
 
         /* =========================================
-           PAGE 10: 結尾 CTA (套用 P7 底圖)
+           PAGE 10: 結尾 CTA (保留 P7 底圖)
            ========================================= */
         .footer-cta { 
             position: relative;
@@ -525,7 +522,9 @@
                 </div>
                 <div class="vision-text">
                     <h3>$FORMOSA 能量基地</h3>
-                    <p>$FORMOSA 作為能量基地與社群門票,驅動數位圖騰的鑄造與社群共治。</p>
+                    <p>$FORMOSA 作為能量基地與社群門票,驅動數位圖騰的鑄造與社群共治。<br>
+                    CA：cELeyWdBof4m8fYcDDvYwuBkyAgJSrspk4Rpb3ypump
+                    </p>
                 </div>
             </div>
         </div>
@@ -535,8 +534,11 @@
         <div class="container">
             <h2>核心載體:NEXUS 金軸底座</h2>
             <p class="nexus-text" style="font-size: 1.1rem; max-width: 800px; margin: 0 auto; color: #ccc;">
-                每枚 NFT 皆建構於融合現代電路與傳統雲紋(回紋)的「NEXUS 金軸底座」之上。 <br>
-                這是寶島最古老的能量祭壇,將轉瞬即逝的文明,凝結為永恆的3D金質圖騰。
+                • 每枚 NFT 皆建構於融合現代電路與傳統雲紋(回紋)的「NEXUS 金軸底座」之上。 <br>
+                這是寶島最古老的能量祭壇,將轉瞬即逝的文明,凝結為永恆的3D金質圖騰。 <br>
+                • 數位電路與萬字迷宮 (Digital Circuitry and the Wan Maze) <br>
+                背景線條融合了 PCB 電路走線與傳統「萬」字紋（Auspicious Wan Pattern）<br>
+                這隱喻寶島是高度數位化的社會，同時也象徵傳統智慧與科技創新的生生不息、萬世繁榮。
             </p>
             <div class="nexus-image-container">
                 <img src="$FORMOSA_NEXUS.png" alt="NEXUS Golden Axis" class="remove-bg">
@@ -684,18 +686,15 @@
     </div>
 
     <script type="text/javascript">
-        // 1. 初始化 Google 翻譯模組 (保持隱藏)
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'zh-TW',
-                includedLanguages: 'zh-TW,zh-CN,en,ja,ko,es,fr', // 支援的語系：繁中、簡中、英、日、韓、西、法
+                includedLanguages: 'zh-TW,zh-CN,en,ja,ko,es,fr', 
                 autoDisplay: false
             }, 'google_translate_element');
         }
 
-        // 2. 自訂下拉選單連動 Google 翻譯
         function translatePage(langCode) {
-            // 尋找 Google 生成的隱藏下拉選單並觸發切換
             var selectField = document.querySelector(".goog-te-combo");
             if (selectField) {
                 selectField.value = langCode;
@@ -703,11 +702,10 @@
             }
         }
 
-        // 3. 自動偵測使用者系統語系並切換
         window.onload = function() {
             setTimeout(function() {
                 var userLang = navigator.language || navigator.userLanguage;
-                var langCode = 'zh-TW'; // 預設繁體中文
+                var langCode = 'zh-TW'; 
                 
                 if (userLang.includes('zh-CN') || userLang.includes('zh-Hans')) {
                     langCode = 'zh-CN';
@@ -723,17 +721,14 @@
                     langCode = 'fr';
                 }
                 
-                // 如果使用者的系統語言不是繁體中文，自動幫他翻譯
                 if (langCode !== 'zh-TW') {
                     translatePage(langCode);
-                    // 同步更新我們自訂下拉選單的顯示狀態
                     var customSelect = document.getElementById('langSelect');
                     if (customSelect) customSelect.value = langCode;
                 }
-            }, 1000); // 延遲 1 秒等待 Google 翻譯模組載入完成
+            }, 1000); 
         };
 
-        // 4. 回到頂部按鈕邏輯
         const backToTopBtn = document.getElementById("backToTopBtn");
         window.addEventListener("scroll", () => {
             if (window.scrollY > 300) backToTopBtn.classList.add("show");
@@ -741,7 +736,6 @@
         });
         backToTopBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
-        // 5. 防右鍵、防快捷鍵、防檢視原始碼
         document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
         document.addEventListener('keydown', function(e) {
             if (e.key === 'F12') { e.preventDefault(); }
