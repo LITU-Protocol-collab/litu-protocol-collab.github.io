@@ -273,18 +273,24 @@
         .vuvu-text-content { flex: 1; }
 
         /* =========================================
-           PAGE 7: 治理哲學
+           PAGE 7: 治理哲學 (套用 P6 底圖與玻璃擬態)
            ========================================= */
         .governance-section {
-            position: relative;
-            background-color: var(--dark-bg);
-            padding: 4rem 0; 
-            border-top: 1px solid rgba(212, 175, 55, 0.1);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            position: relative; background-color: var(--dark-bg);
+            background-image: url("Code_Generated_Image(P6).png");
+            background-size: cover; background-position: center center; background-repeat: no-repeat;
+            padding: 4rem 0; border-top: 1px solid rgba(212, 175, 55, 0.1); border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .governance-section::before {
+            content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(180deg, var(--dark-bg) 0%, rgba(5,10,8,0.5) 20%, rgba(5,10,8,0.5) 80%, var(--dark-bg) 100%);
+            z-index: 1; pointer-events: none;
         }
         .governance-section .container { position: relative; z-index: 2; padding: 0; }
-        .governance-section .gov-card { background: rgba(10, 10, 10, 0.75); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
-
+        .governance-section .gov-card {
+            background: rgba(10, 10, 10, 0.75); backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px); box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
         /* =========================================
            PAGE 8: 文獻下載專區
            ========================================= */
