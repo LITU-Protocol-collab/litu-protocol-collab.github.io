@@ -373,7 +373,7 @@
         }
 
         /* =========================================
-           PAGE 9: 免責聲明 (移除 P6 底圖，恢復純背景)
+           PAGE 9: 免責聲明 (🚨 修正：標題與邊框改為金色)
            ========================================= */
         .disclaimer-section { 
             position: relative;
@@ -383,15 +383,18 @@
             border-top: 1px solid #1a1a1a; 
         }
         .disclaimer-section .container { position: relative; z-index: 2; }
-        .disclaimer-section h2 { color: #bbb; margin-bottom: 1.5rem; font-size: 1.5rem; text-align: center; }
+        /* 增加：指定修正標題顏色為金色 */
+        .disclaimer-section h2 { color: var(--nexus-gold); margin-bottom: 1.5rem; font-size: 1.5rem; text-align: center; }
         .disclaimer-item { 
             margin-bottom: 1.5rem; padding: 1.5rem; 
             background: rgba(10, 10, 10, 0.7); 
             backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-            border-radius: 8px; border-left: 2px solid #333; box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            border-radius: 8px; 
+            /* 增加：指定修正項目框邊框為金色 */
+            border-left: 2px solid var(--nexus-gold); 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
         .disclaimer-item h4 { color: #ddd; margin-top: 0; margin-bottom: 0.5rem; }
-
         /* =========================================
            PAGE 10: 結尾 CTA (保留 P7 底圖)
            ========================================= */
