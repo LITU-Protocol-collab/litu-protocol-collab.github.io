@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> 美麗寶島formosa數位圖騰䷢Solana </title>
-    <link rel="icon" href="$FORMOSA_NEXUS.png" type="image/jpeg">
+    <link rel="icon" href="Gemini_Generated_Image_dep41dep41dep41d_clean.png" type="image/png">
     <style>
         /* =========================================
            共用設定與變數
@@ -105,7 +105,7 @@
             color: var(--text-light);
         }
 
-         /* =========================================
+        /* =========================================
            PAGE 1: 封面 Hero
            ========================================= */
         .hero {
@@ -114,9 +114,8 @@
             border-bottom: 1px solid rgba(212, 175, 55, 0.2);
             overflow: hidden;
         }
-        
-        /* 🚨 新增修改：標題自動縮放且同一列不換行 */
         .hero h1 { 
+            /* 修正：標題自動縮放且同一列不換行 */
             white-space: nowrap; 
             font-size: min(4vw, 2.5rem);
             color: var(--nexus-gold); 
@@ -124,7 +123,6 @@
             letter-spacing: 2px; 
             padding: 0 1rem; 
         }
-
         .hero-container { position: relative; width: 95%;
             max-width: 1400px; margin: 0 auto; }
         .hero-img { width: 100%; height: auto;
@@ -195,7 +193,7 @@
         .vision-text p { color: #ccc; font-size: 1.1rem; }
 
         /* =========================================
-           PAGE 4: 核心載體 NEXUS
+           PAGE 4: 核心載體 NEXUS (替換為影片)
            ========================================= */
         .nexus-section { text-align: center; background-color: var(--card-bg);
             border-top: 1px solid rgba(212, 175, 55, 0.1); border-bottom: 1px solid rgba(212, 175, 55, 0.1); padding: 4rem 0; }
@@ -204,10 +202,30 @@
             margin: 3rem auto;
             max-width: 600px;
             transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative; /* 新增：配合安全裝置補強 */
         }
-        .nexus-image-container:hover img {
+        
+        /* 🚨 新增：NEXUS 影片去背與安全裝置補強 */
+        .video-nexus {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            /* 圖片去背補強 (套用 mix-blend-mode  screen) */
+            mix-blend-mode: screen; 
+            /* 濾鏡補強 (調整對比與亮度，並增加金色 Drop-shadow 霓虹光暈) */
+            filter: contrast(1.2) brightness(1.1) drop-shadow(0 0 25px rgba(212, 175, 55, 0.4));
+            transition: transform 0.6s ease, filter 0.6s ease;
+            
+            /* 安全裝置補強 (禁止右鍵、拖拽) */
+            pointer-events: none; /* 禁止鼠標事件，防止右鍵點擊與另存 */
+            -webkit-user-drag: none; /* 禁止拖拽 */
+        }
+
+        .nexus-image-container:hover .video-nexus {
             transform: scale(1.03);
-            filter: contrast(1.3) brightness(1.2) drop-shadow(0 0 30px rgba(212, 175, 55, 0.6));
+            /* hover 時霓虹光暈增強 */
+            filter: contrast(1.3) brightness(1.2) drop-shadow(0 0 40px rgba(212, 175, 55, 0.7));
         }
 
         /* =========================================
@@ -260,29 +278,15 @@
         .vuvu-card-content { display: flex; align-items: center; gap: 2.5rem; }
         
         .vuvu-video-container {
-            flex: 0 0 200px; 
-            max-width: 200px; 
-            height: 200px; 
-            overflow: hidden;
-            border-radius: 25px; 
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.3); 
-            mix-blend-mode: screen; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            background-color: #000;
+            flex: 0 0 200px; max-width: 200px; height: 200px; overflow: hidden;
+            border-radius: 25px; box-shadow: 0 0 25px rgba(212, 175, 55, 0.3); mix-blend-mode: screen; display: flex;
+            justify-content: center; align-items: center; background-color: #000;
         }
-        .vuvu-video-container video { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
-            display: block; 
-            pointer-events: none; 
-        }
+        .vuvu-video-container video { width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; }
         .vuvu-text-content { flex: 1; }
 
         /* =========================================
-           PAGE 7: 治理哲學 (套用 P6 底圖與玻璃擬態)
+           PAGE 7: 治理哲學 (套用 P6 底圖)
            ========================================= */
         .governance-section {
             position: relative; background-color: var(--dark-bg);
@@ -300,53 +304,37 @@
             background: rgba(10, 10, 10, 0.75); backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px); box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
+
         /* =========================================
            PAGE 8: 文獻下載專區
            ========================================= */
-        .download-section { 
-            text-align: center; 
-            background-color: var(--card-bg); 
-            border-top: 1px solid rgba(212, 175, 55, 0.1); 
-            padding: 4rem 0; 
-        }
+        .download-section { text-align: center; background-color: var(--card-bg); border-top: 1px solid rgba(212, 175, 55, 0.1); padding: 4rem 0; }
         .download-section h2 { color: var(--nexus-gold); font-size: 2.2rem; margin-bottom: 1rem; }
         .download-desc { color: #ccc; font-size: 1.1rem; margin-bottom: 3rem; }
-        .download-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1.5rem;
-        }
+        .download-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; }
         .download-card {
-            background: rgba(10, 20, 17, 0.7);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 12px;
-            padding: 2rem 1rem;
-            text-decoration: none;
-            transition: transform 0.3s, box-shadow 0.3s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            background: rgba(10, 20, 17, 0.7); border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 12px; padding: 2rem 1rem; text-decoration: none; transition: transform 0.3s, box-shadow 0.3s;
+            display: flex; flex-direction: column; align-items: center;
         }
         .download-card:hover { transform: translateY(-10px); border-color: var(--nexus-gold); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2); }
         .download-icon { width: 40px; height: 40px; fill: var(--nexus-gold); margin-bottom: 1rem; }
         .download-title { color: var(--text-light); font-size: 1.1rem; margin: 0; text-align: center; }
 
         /* =========================================
-           新增：PAGE 8.5 開發者錢包 (移入 P6 底圖)
+           PAGE 8.5: 開發者錢包 (套用 P6 底圖)
            ========================================= */
         .wallet-section { 
-            position: relative; /* 新增：配合遮罩 */
+            position: relative; 
             text-align: center; 
             background-color: var(--card-bg); 
             border-top: 1px solid rgba(212, 175, 55, 0.1); 
             padding: 4rem 0; 
-            /* 新增：將原本第9頁的 P6 底圖移至此處 */
             background-image: url("Code_Generated_Image(P6).png");
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
         }
-        /* 新增：配合底圖的玻璃擬態漸層遮罩 */
         .wallet-section::before {
             content: "";
             position: absolute;
@@ -354,22 +342,13 @@
             background: linear-gradient(180deg, var(--dark-bg) 0%, rgba(5,10,8,0.6) 20%, rgba(5,10,8,0.6) 80%, var(--dark-bg) 100%);
             z-index: 1; pointer-events: none;
         }
-        .wallet-section .container {
-            position: relative;
-            z-index: 2;
-        }
+        .wallet-section .container { position: relative; z-index: 2; }
         .wallet-section h2 { color: var(--nexus-gold); font-size: 2.2rem; margin-bottom: 1rem; }
         .wallet-desc { color: #ccc; font-size: 1.1rem; margin-bottom: 2rem; }
-        .wallet-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
+        .wallet-list { display: flex; flex-direction: column; gap: 1rem; max-width: 700px; margin: 0 auto; }
         .wallet-item {
             background: rgba(10, 20, 17, 0.7);
-            backdrop-filter: blur(8px); /* 讓錢包卡片也有玻璃擬態以配合底圖 */
+            backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             border: 1px solid rgba(212, 175, 55, 0.3);
             border-radius: 12px;
@@ -404,8 +383,9 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
         .disclaimer-item h4 { color: #ddd; margin-top: 0; margin-bottom: 0.5rem; }
+
         /* =========================================
-           PAGE 10: 結尾 CTA (保留 P7 底圖)
+           PAGE 10: 結尾 CTA (套用 P7 底圖)
            ========================================= */
         .footer-cta { 
             position: relative;
@@ -436,13 +416,19 @@
         #backToTopBtn:hover { transform: translateY(-5px); background-color: #eadd96; box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6); }
         #backToTopBtn svg { width: 24px; height: 24px; fill: var(--primary-green); }
 
-        /* 響應式調整 */
+        /* =========================================
+           響應式調整 RWD
+           ========================================= */
         @media (max-width: 1024px) {
             .aureum-grid, .download-grid { grid-template-columns: repeat(5, 1fr); gap: 0.5rem; }
         }
         @media (max-width: 768px) {
+            /* 新增：手機版導覽列自動折行與置中，避免社群 ICON 被擠出畫面 */
+            .nav-container { flex-direction: column; gap: 10px; }
+            .logo-area span { font-size: 1rem !important; white-space: normal; text-align: center; }
+            .social-icons { flex-wrap: wrap; justify-content: center; }
             .vision-grid { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 1.8rem; }
+            /* .hero h1 media query 移除以配合自動縮放 */
             .hero p.subtitle { font-size: 1.2rem; }
             .hero p.slogan { font-size: 1rem; }
             .aureum-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); } 
@@ -468,9 +454,11 @@
                 <a href="https://x.com/formosa1171625" target="_blank" title="X">
                     <svg viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.294 19.497h2.039L6.486 3.24H4.298l13.31 17.41z"/></svg>
                 </a>
-                <a href="https://www.reddit.com/user/Cold-Specific5867/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button" target="_blank" title="Reddit">
+<a href="https://www.reddit.com/user/Cold-Specific5867/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button" target="_blank" title="Reddit">
                     <svg viewBox="0 0 24 24"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.051l-2.594-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.97 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.057 1.597.05.314.074.631.074.947 0 2.871-3.581 5.2-8 5.2s-8-2.329-8-5.2c0-.315.025-.631.074-.944A1.747 1.747 0 0 1 3.25 12.25c0-.97.786-1.754 1.754-1.754.463 0 .875.18 1.179.479 1.187-.85 2.83-1.412 4.638-1.491l.856-4.023 3.327.702c.01-.643.536-1.162 1.159-1.162zM9.25 13a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5zm5.5 0a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5zm-5.503 3.876c-.13 0-.236.106-.236.236 0 .54.439.978.978.978s.978-.439.978-.978a.236.236 0 1 0-.472 0c0 .279-.227.506-.506.506s-.506-.227-.506-.506c0-.13-.106-.236-.236-.236zm4.526 0c-.13 0-.236.106-.236.236 0 .54.439.978.978.978s.978-.439.978-.978a.236.236 0 1 0-.472 0c0 .279-.227.506-.506.506s-.506-.227-.506-.506c0-.13-.106-.236-.236-.236z"/></svg>
                 </a>
+
+
                 <a href="https://t.me/formosa_crypto_tg" target="_blank" title="Telegram">
                     <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.11.02-1.93 1.23-5.46 3.62-.51.35-.98.52-1.4.51-.46-.01-1.35-.26-2.01-.48-.81-.27-1.45-.42-1.39-.88.03-.24.37-.48 1.02-.73 4-1.74 6.67-2.89 8.02-3.44 3.83-1.58 4.63-1.85 5.16-1.86.11 0 .37.03.54.17.14.12.18.28.19.4z"/></svg>
                 </a>
@@ -484,6 +472,503 @@
                 </a>
                 <a href="https://opensea.io/collection/formosa-nft-collection" target="_blank" title="OpenSea">
                     <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="#00A3FF">
+                        <rect x="3" y="3" width="18" height="18" rx="3" ry="3" fill="#00A3FF"/>
+                        <path d="M8 8 L12 13 L16 8" stroke="#ffffff" stroke-width="2" stroke-linecap="round" fill="transparent"/>
+                        <circle cx="12" cy="16" r="2" fill="#ffffff"/>
+                    </svg>
+                </a>
+                
+                <div id="google_translate_element"></div>
+                
+                <div class="custom-lang-selector" translate="no">
+                    <select id="langSelect" onchange="translatePage(this.value)">
+                        <option value="zh-TW">繁體中文</option>
+                        <option value="zh-CN">简体中文</option>
+                        <option value="en">English</option>完全收到！我已經嚴格按照您的要求，**以您上傳的 `index.txt` 程式碼為母體**，進行了精確的修改。
+
+我已將 NEXUS 的靜態圖替換為上傳的 `LITU_NEXUS.mp4` 影片，並針對安全裝置和影片去背（mix-blend-mode）進行了補強。
+
+以下是修改的重點說明：
+1. **替換 NEXUS 靜態圖為影片**：在第 4 頁（「核心載體:NEXUS 金軸底座」）中，原有的 `<img>` 標籤已被更換為 `<video>` 標籤，引入了 `LITU_NEXUS.mp4`，並設置為自動播放、循環和靜音。
+2. **影片安全裝置補強**：在 CSS 中為新的 `video-nexus` 類別添加了 **`pointer-events: none;`** 和 **`-webkit-user-drag: none;`**，防止用戶右鍵點擊、拖拽或另存影片，與原有圖片安全裝置保持一致。
+3. **影片去背與濾鏡補強**：套用了與原有圖片一致的去背處理（**`mix-blend-mode: screen;`**）和濾鏡（對比度、亮度），並在影片上增加了專屬的**金色霓虹光暈 (`drop-shadow`)**，讓 NEXUS 底座更顯金碧輝煌且完美融入深色背景。
+
+以下是最終的完整程式碼，請直接複製覆蓋您的檔案：
+
+```html
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 美麗寶島formosa數位圖騰䷢Solana </title>
+    <link rel="icon" href="Gemini_Generated_Image_dep41dep41dep41d_clean.png" type="image/png">
+    <style>
+        /* =========================================
+           共用設定與變數
+           ========================================= */
+        :root {
+            --primary-green: #004D40;
+            --nexus-gold: #D4AF37;
+            --dark-bg: #050a08;
+            --card-bg: #0a1411;
+            --text-main: #e0e0e0;
+            --text-light: #ffffff;
+        }
+        body {
+            font-family: 'Noto Sans TC', 'Inter', 'Helvetica', sans-serif;
+            margin: 0; padding: 0;
+            color: var(--text-main);
+            background-color: var(--dark-bg);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+            
+            /* 安全防盜機制：禁止反白與選取 */
+            -webkit-user-select: none;
+            user-select: none;
+            
+            /* 強制隱藏 Google 翻譯產生的頂部工具列與版面位移 */
+            top: 0px !important; 
+            position: static !important;
+        }
+        /* 安全防盜機制：防止圖片被拖拉與觸控另存 */
+        img { pointer-events: none; -webkit-user-drag: none; }
+
+        /* 完全隱藏 Google 翻譯的預設框架與圖示 */
+        .skiptranslate { display: none !important; }
+        #google_translate_element { display: none !important; }
+        .goog-te-banner-frame { display: none !important; }
+
+        .container { 
+            width: 95%; 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 4rem 0; 
+        }
+
+        /* 圖片自動去背處理類別 */
+        .remove-bg {
+            mix-blend-mode: screen; 
+            filter: contrast(1.2) brightness(1.1) drop-shadow(0 0 15px rgba(212, 175, 55, 0.15));
+            transition: transform 0.4s ease, filter 0.4s ease;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* =========================================
+           導覽列 (Header)
+           ========================================= */
+        header {
+            background-color: var(--primary-green);
+            color: var(--text-light);
+            padding: 1rem 0;
+            position: sticky; top: 0; z-index: 1000;
+            border-bottom: 2px solid var(--nexus-gold);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between; align-items: center;
+            width: 90%; max-width: 1200px; margin: 0 auto;
+        }
+        .logo-area { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .logo-area img { height: 60px; width: auto; object-fit: contain; }
+
+        .social-icons { display: flex; gap: 18px; align-items: center; }
+        .social-icons a {
+            display: inline-flex;
+            align-items: center; justify-content: center;
+            width: 26px; height: 26px; fill: var(--text-light);
+            transition: fill 0.3s, transform 0.2s;
+        }
+        .social-icons a:hover { fill: var(--nexus-gold); transform: translateY(-3px); }
+
+        /* 專屬自訂多國語言下拉選單 (無 Google 圖示) */
+        .custom-lang-selector select {
+            background-color: transparent;
+            color: var(--nexus-gold);
+            border: 1px solid var(--nexus-gold);
+            border-radius: 20px;
+            padding: 4px 10px;
+            font-size: 0.6rem;
+            font-family: inherit;
+            outline: none;
+            cursor: pointer;
+            text-align: center;
+        }
+        .custom-lang-selector select option {
+            background-color: var(--card-bg);
+            color: var(--text-light);
+        }
+
+        /* =========================================
+           PAGE 1: 封面 Hero
+           ========================================= */
+        .hero {
+            background: linear-gradient(180deg, var(--primary-green) 0%, var(--dark-bg) 100%);
+            text-align: center; padding: 4rem 0 6rem 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            overflow: hidden;
+        }
+        .hero h1 { 
+            /* 修正：標題自動縮放且同一列不換行 */
+            white-space: nowrap; 
+            font-size: min(4vw, 2.5rem);
+            color: var(--nexus-gold); 
+            margin-bottom: 2rem; 
+            letter-spacing: 2px; 
+            padding: 0 1rem; 
+        }
+        .hero-container { position: relative; width: 95%;
+            max-width: 1400px; margin: 0 auto; }
+        .hero-img { width: 100%; height: auto;
+            display: block; }
+        .hero-overlay {
+            position: absolute;
+            top: 80%; left: 50%; transform: translate(-50%, -50%);
+            width: 90%; z-index: 10; pointer-events: none;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+        }
+        .hero p.subtitle { font-size: 1.5rem; color: #b2d8d0; margin-bottom: 1rem;
+            font-weight: 500; text-shadow: 0 4px 15px rgba(0,0,0,0.9), 0 2px 5px rgba(0,0,0,0.8); line-height: 1.5;
+        }
+        .hero p.slogan { font-size: 1.2rem; color: var(--nexus-gold); font-weight: bold;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.9), 0 2px 5px rgba(0,0,0,0.8); letter-spacing: 1px;
+        }
+
+        /* =========================================
+           PAGE 2: 項目定位
+           ========================================= */
+        .identity-section { text-align: center; background-color: var(--card-bg); border-bottom: 1px solid #112b23; }
+        .identity-section h2 { color: var(--nexus-gold); font-size: 2.2rem; margin-bottom: 1.5rem; }
+
+        /* =========================================
+           PAGE 3: 願景與能量基地 (套用 P3 底圖)
+           ========================================= */
+        .vision-section {
+            position: relative;
+            background-color: var(--dark-bg);
+            background-image: url("Code_Generated_Image(P3).png");
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            padding: 4rem 0;
+            border-bottom: 1px solid #112b23;
+        }
+        .vision-section::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(180deg, var(--dark-bg) 0%, rgba(5,10,8,0.5) 20%, rgba(5,10,8,0.5) 80%, var(--dark-bg) 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+        .vision-section .container {
+            position: relative;
+            z-index: 2;
+            padding: 0; 
+        }
+        .vision-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 3rem; 
+            align-items: stretch; 
+        }
+        .vision-text {
+            background: rgba(10, 10, 10, 0.75); 
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 12px;
+            border: 1px solid var(--nexus-gold);
+            padding: 2.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            transition: transform 0.3s;
+        }
+        .vision-text:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(212, 175, 55, 0.15); }
+        .vision-text h3 { color: var(--nexus-gold); margin-top: 0; font-size: 1.5rem; margin-bottom: 1rem; }
+        .vision-text p { color: #ccc; font-size: 1.1rem; }
+
+        /* =========================================
+           PAGE 4: 核心載體 NEXUS (替換為影片)
+           ========================================= */
+        .nexus-section { text-align: center; background-color: var(--card-bg);
+            border-top: 1px solid rgba(212, 175, 55, 0.1); border-bottom: 1px solid rgba(212, 175, 55, 0.1); padding: 4rem 0; }
+        .nexus-section h2 { color: var(--nexus-gold); font-size: 2.2rem; }
+        .nexus-image-container {
+            margin: 3rem auto;
+            max-width: 600px;
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative; /* 新增：配合安全裝置補強 */
+        }
+        
+        /* 🚨 新增：NEXUS 影片去背與安全裝置補強 */
+        .video-nexus {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            /* 圖片去背補強 (套用 mix-blend-mode  screen) */
+            mix-blend-mode: screen; 
+            /* 濾鏡補強 (調整對比與亮度，並增加金色 Drop-shadow 霓虹光暈) */
+            filter: contrast(1.2) brightness(1.1) drop-shadow(0 0 25px rgba(212, 175, 55, 0.4));
+            transition: transform 0.6s ease, filter 0.6s ease;
+            
+            /* 安全裝置補強 (禁止右鍵、拖拽) */
+            pointer-events: none; /* 禁止鼠標事件，防止右鍵點擊與另存 */
+            -webkit-user-drag: none; /* 禁止拖拽 */
+        }
+
+        .nexus-image-container:hover .video-nexus {
+            transform: scale(1.03);
+            /* hover 時霓虹光暈增強 */
+            filter: contrast(1.3) brightness(1.2) drop-shadow(0 0 40px rgba(212, 175, 55, 0.7));
+        }
+
+        /* =========================================
+           PAGE 5: 五大金域 NFT (套用 P5 底圖)
+           ========================================= */
+        .aureum-section { 
+            text-align: center; 
+            position: relative;
+            background-color: var(--dark-bg);
+            background-image: url("Code_Generated_Image(P5).png");
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+        .aureum-section::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(180deg, var(--dark-bg) 0%, rgba(5,10,8,0.4) 15%, rgba(5,10,8,0.4) 85%, var(--dark-bg) 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+        .aureum-section .container { position: relative; z-index: 2; }
+        .aureum-section h2 { color: var(--nexus-gold); font-size: 2.2rem; }
+        .aureum-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem; margin-top: 3rem; }
+        .aureum-item { 
+            padding: 2rem 1rem;
+            background: rgba(10, 20, 17, 0.7); 
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 12px; 
+            border-top: 2px solid var(--nexus-gold); 
+            border-left: 1px solid rgba(212, 175, 55, 0.15);
+            border-right: 1px solid rgba(212, 175, 55, 0.15);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8); 
+            transition: transform 0.3s; 
+            display: flex; flex-direction: column; align-items: center;
+        }
+        .aureum-item:hover { transform: translateY(-10px); border-top: 4px solid var(--nexus-gold); }
+        .aureum-item img { width: 120px; height: 120px; object-fit: contain; margin-bottom: 1.5rem; }
+        .aureum-item h3 { color: var(--text-light); font-size: 1.1rem; margin-bottom: 0.5rem; text-align: center; }
+        .aureum-item p { color: #aaa; font-size: 0.85rem; text-align: center; }
+
+        /* =========================================
+           PAGE 6: 全知大使 Vuvu (包含影片)
+           ========================================= */
+        .gov-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-top: 4rem; margin-bottom: 4rem; }
+        .gov-card { background: var(--card-bg); padding: 2.5rem; border-radius: 10px; border-left: 4px solid var(--nexus-gold); }
+        .gov-card h3 { color: var(--nexus-gold); margin-bottom: 1.5rem; font-size: 1.5rem; }
+        .vuvu-card-content { display: flex; align-items: center; gap: 2.5rem; }
+        
+        .vuvu-video-container {
+            flex: 0 0 200px; max-width: 200px; height: 200px; overflow: hidden;
+            border-radius: 25px; box-shadow: 0 0 25px rgba(212, 175, 55, 0.3); mix-blend-mode: screen; display: flex;
+            justify-content: center; align-items: center; background-color: #000;
+        }
+        .vuvu-video-container video { width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; }
+        .vuvu-text-content { flex: 1; }
+
+        /* =========================================
+           PAGE 7: 治理哲學 (套用 P6 底圖)
+           ========================================= */
+        .governance-section {
+            position: relative; background-color: var(--dark-bg);
+            background-image: url("Code_Generated_Image(P6).png");
+            background-size: cover; background-position: center center; background-repeat: no-repeat;
+            padding: 4rem 0; border-top: 1px solid rgba(212, 175, 55, 0.1); border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .governance-section::before {
+            content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(180deg, var(--dark-bg) 0%, rgba(5,10,8,0.5) 20%, rgba(5,10,8,0.5) 80%, var(--dark-bg) 100%);
+            z-index: 1; pointer-events: none;
+        }
+        .governance-section .container { position: relative; z-index: 2; padding: 0; }
+        .governance-section .gov-card {
+            background: rgba(10, 10, 10, 0.75); backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px); box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        /* =========================================
+           PAGE 8: 文獻下載專區
+           ========================================= */
+        .download-section { text-align: center; background-color: var(--card-bg); border-top: 1px solid rgba(212, 175, 55, 0.1); padding: 4rem 0; }
+        .download-section h2 { color: var(--nexus-gold); font-size: 2.2rem; margin-bottom: 1rem; }
+        .download-desc { color: #ccc; font-size: 1.1rem; margin-bottom: 3rem; }
+        .download-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; }
+        .download-card {
+            background: rgba(10, 20, 17, 0.7); border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 12px; padding: 2rem 1rem; text-decoration: none; transition: transform 0.3s, box-shadow 0.3s;
+            display: flex; flex-direction: column; align-items: center;
+        }
+        .download-card:hover { transform: translateY(-10px); border-color: var(--nexus-gold); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2); }
+        .download-icon { width: 40px; height: 40px; fill: var(--nexus-gold); margin-bottom: 1rem; }
+        .download-title { color: var(--text-light); font-size: 1.1rem; margin: 0; text-align: center; }
+
+        /* =========================================
+           PAGE 8.5: 開發者錢包 (套用 P6 底圖)
+           ========================================= */
+        .wallet-section { 
+            position: relative; 
+            text-align: center; 
+            background-color: var(--card-bg); 
+            border-top: 1px solid rgba(212, 175, 55, 0.1); 
+            padding: 4rem 0; 
+            background-image: url("Code_Generated_Image(P6).png");
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+        .wallet-section::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(180deg, var(--dark-bg) 0%, rgba(5,10,8,0.6) 20%, rgba(5,10,8,0.6) 80%, var(--dark-bg) 100%);
+            z-index: 1; pointer-events: none;
+        }
+        .wallet-section .container { position: relative; z-index: 2; }
+        .wallet-section h2 { color: var(--nexus-gold); font-size: 2.2rem; margin-bottom: 1rem; }
+        .wallet-desc { color: #ccc; font-size: 1.1rem; margin-bottom: 2rem; }
+        .wallet-list { display: flex; flex-direction: column; gap: 1rem; max-width: 700px; margin: 0 auto; }
+        .wallet-item {
+            background: rgba(10, 20, 17, 0.7);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            color: var(--text-light);
+            font-family: monospace;
+            font-size: 1.1rem;
+            word-break: break-all;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        /* =========================================
+           PAGE 9: 免責聲明 (🚨 修正：標題與邊框改為金色)
+           ========================================= */
+        .disclaimer-section { 
+            position: relative;
+            background-color: var(--dark-bg); 
+            color: #888; 
+            font-size: 0.9rem; 
+            border-top: 1px solid #1a1a1a; 
+        }
+        .disclaimer-section .container { position: relative; z-index: 2; }
+        /* 增加：指定修正標題顏色為金色 */
+        .disclaimer-section h2 { color: var(--nexus-gold); margin-bottom: 1.5rem; font-size: 1.5rem; text-align: center; }
+        .disclaimer-item { 
+            margin-bottom: 1.5rem; padding: 1.5rem; 
+            background: rgba(10, 10, 10, 0.7); 
+            backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+            border-radius: 8px; 
+            /* 增加：指定修正項目框邊框為金色 */
+            border-left: 2px solid var(--nexus-gold); 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        .disclaimer-item h4 { color: #ddd; margin-top: 0; margin-bottom: 0.5rem; }
+
+        /* =========================================
+           PAGE 10: 結尾 CTA (套用 P7 底圖)
+           ========================================= */
+        .footer-cta { 
+            position: relative;
+            text-align: center; padding: 5rem 2rem; background-color: var(--dark-bg);
+            background-image: url("Code_Generated_Image(P7).png");
+            background-size: cover; background-position: center center; background-repeat: no-repeat;
+        }
+        .footer-cta::before {
+            content: "";
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(0deg, rgba(0,77,64,0.85) 0%, rgba(5,10,8,0.5) 100%);
+            z-index: 1; pointer-events: none;
+        }
+        .footer-cta .container { position: relative; z-index: 2; }
+        .footer-cta h2 { color: var(--nexus-gold); font-size: 2rem; }
+        
+        /* Footer */
+        footer { background-color: #000; color: #555; text-align: center; padding: 2rem 0; }
+        
+        #backToTopBtn {
+            position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px;
+            background-color: var(--nexus-gold); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center; cursor: pointer;
+            opacity: 0; visibility: hidden; transition: all 0.3s; z-index: 9999;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+        #backToTopBtn.show { opacity: 1; visibility: visible; }
+        #backToTopBtn:hover { transform: translateY(-5px); background-color: #eadd96; box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6); }
+        #backToTopBtn svg { width: 24px; height: 24px; fill: var(--primary-green); }
+
+        /* =========================================
+           響應式調整 RWD
+           ========================================= */
+        @media (max-width: 1024px) {
+            .aureum-grid, .download-grid { grid-template-columns: repeat(5, 1fr); gap: 0.5rem; }
+        }
+        @media (max-width: 768px) {
+            /* 新增：手機版導覽列自動折行與置中，避免社群 ICON 被擠出畫面 */
+            .nav-container { flex-direction: column; gap: 10px; }
+            .logo-area span { font-size: 1rem !important; white-space: normal; text-align: center; }
+            .social-icons { flex-wrap: wrap; justify-content: center; }
+            .vision-grid { grid-template-columns: 1fr; }
+            /* .hero h1 media query 移除以配合自動縮放 */
+            .hero p.subtitle { font-size: 1.2rem; }
+            .hero p.slogan { font-size: 1rem; }
+            .aureum-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); } 
+            .vuvu-card-content { flex-direction: column; text-align: center; }
+            .download-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+        }
+        @media (max-width: 480px) {
+            .hero p.subtitle { font-size: 1rem; }
+            .hero p.slogan { font-size: 0.8rem; }
+            .aureum-grid, .download-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo-area" translate="no">
+                <img src="imagelogo13.jpg" alt="LITU LOGO" class="remove-bg">
+                <span style="font-weight: 700; font-size: 1.2rem; color: var(--nexus-gold); letter-spacing: 1px;">LITU Degital Totem | 美麗寶島formosa</span>
+            </a>
+        
+            <div class="social-icons">
+                <a href="[https://x.com/formosa1171625](https://x.com/formosa1171625)" target="_blank" title="X">
+                    <svg viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.294 19.497h2.039L6.486 3.24H4.298l13.31 17.41z"/></svg>
+                </a>
+		<a href="https://www.reddit.com/user/Cold-Specific5867/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button" target="_blank" title="Reddit">
+                    <svg viewBox="0 0 24 24"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.051l-2.594-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.97 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.057 1.597.05.314.074.631.074.947 0 2.871-3.581 5.2-8 5.2s-8-2.329-8-5.2c0-.315.025-.631.074-.944A1.747 1.747 0 0 1 3.25 12.25c0-.97.786-1.754 1.754-1.754.463 0 .875.18 1.179.479 1.187-.85 2.83-1.412 4.638-1.491l.856-4.023 3.327.702c.01-.643.536-1.162 1.159-1.162zM9.25 13a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5zm5.5 0a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5zm-5.503 3.876c-.13 0-.236.106-.236.236 0 .54.439.978.978.978s.978-.439.978-.978a.236.236 0 1 0-.472 0c0 .279-.227.506-.506.506s-.506-.227-.506-.506c0-.13-.106-.236-.236-.236zm4.526 0c-.13 0-.236.106-.236.236 0 .54.439.978.978.978s.978-.439.978-.978a.236.236 0 1 0-.472 0c0 .279-.227.506-.506.506s-.506-.227-.506-.506c0-.13-.106-.236-.236-.236z"/></svg>
+                </a>
+
+                <a href="[https://t.me/formosa_crypto_tg](https://t.me/formosa_crypto_tg)" target="_blank" title="Telegram">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.11.02-1.93 1.23-5.46 3.62-.51.35-.98.52-1.4.51-.46-.01-1.35-.26-2.01-.48-.81-.27-1.45-.42-1.39-.88.03-.24.37-.48 1.02-.73 4-1.74 6.67-2.89 8.02-3.44 3.83-1.58 4.63-1.85 5.16-1.86.11 0 .37.03.54.17.14.12.18.28.19.4z"/></svg>
+                </a>
+                <a href="[https://pump.fun/coin/cELeyWdBof4m8fYcDDvYwuBkyAgJSrspk4Rpb3ypump](https://pump.fun/coin/cELeyWdBof4m8fYcDDvYwuBkyAgJSrspk4Rpb3ypump)" target="_blank" title="Pump.fun">
+                    <svg xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                        <rect x="3" y="7" width="20" height="12" rx="6" ry="6" fill="#22c55e" stroke="#ffffff" stroke-width="2"/>
+                        <rect x="6.5" y="9.5" width="13" height="2" rx="1" fill="#ffffff" opacity="0.85"/>
+                        <circle cx="8.5" cy="13" r="1.8" fill="#ffffff"/>
+                        <circle cx="17.5" cy="13" r="1.8" fill="#ffffff"/>
+                    </svg>
+                </a>
+                <a href="[https://opensea.io/collection/formosa-nft-collection](https://opensea.io/collection/formosa-nft-collection)" target="_blank" title="OpenSea">
+                    <svg xmlns="[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)" width="26" height="26" viewBox="0 0 24 24" fill="#00A3FF">
                         <rect x="3" y="3" width="18" height="18" rx="3" ry="3" fill="#00A3FF"/>
                         <path d="M8 8 L12 13 L16 8" stroke="#ffffff" stroke-width="2" stroke-linecap="round" fill="transparent"/>
                         <circle cx="12" cy="16" r="2" fill="#ffffff"/>
