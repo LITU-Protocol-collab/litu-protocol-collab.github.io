@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> 美麗寶島formosa數位圖騰䷢Solana </title>
-    <link rel="icon" href="$FORMOSA_NEXUS.png" type="image/jpeg">
+    <link rel="icon" href="Gemini_Generated_Image_dep41dep41dep41d_clean.png" type="image/png">
     <style>
         /* =========================================
            共用設定與變數
@@ -105,7 +105,7 @@
             color: var(--text-light);
         }
 
-         /* =========================================
+        /* =========================================
            PAGE 1: 封面 Hero
            ========================================= */
         .hero {
@@ -114,29 +114,23 @@
             border-bottom: 1px solid rgba(212, 175, 55, 0.2);
             overflow: hidden;
         }
-        
-        /* 🚨 新增修改：標題自動縮放且同一列不換行 */
         .hero h1 { 
-            white-space: nowrap;
+            white-space: nowrap; 
             font-size: min(4vw, 2.5rem);
             color: var(--nexus-gold); 
             margin-bottom: 2rem; 
             letter-spacing: 2px; 
-            padding: 0 1rem;
+            padding: 0 1rem; 
         }
-
         .hero-container { position: relative; width: 95%;
-            max-width: 1400px; margin: 0 auto;
-        }
+            max-width: 1400px; margin: 0 auto; }
         .hero-img { width: 100%; height: auto;
-            display: block;
-        }
+            display: block; }
         .hero-overlay {
             position: absolute;
             top: 80%; left: 50%; transform: translate(-50%, -50%);
             width: 90%; z-index: 10; pointer-events: none;
-            display: flex; flex-direction: column; align-items: center;
-            justify-content: center;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
         }
         .hero p.subtitle { font-size: 1.5rem; color: #b2d8d0; margin-bottom: 1rem;
             font-weight: 500; text-shadow: 0 4px 15px rgba(0,0,0,0.9), 0 2px 5px rgba(0,0,0,0.8); line-height: 1.5;
@@ -148,13 +142,11 @@
         /* =========================================
            PAGE 2: 項目定位
            ========================================= */
-        .identity-section { text-align: center;
-            background-color: var(--card-bg); border-bottom: 1px solid #112b23; }
-        .identity-section h2 { color: var(--nexus-gold);
-            font-size: 2.2rem; margin-bottom: 1.5rem; }
+        .identity-section { text-align: center; background-color: var(--card-bg); border-bottom: 1px solid #112b23; }
+        .identity-section h2 { color: var(--nexus-gold); font-size: 2.2rem; margin-bottom: 1.5rem; }
 
         /* =========================================
-           PAGE 3: 願景與能量基地 (套用 P3 底圖)
+           PAGE 3: 願景與能量基地
            ========================================= */
         .vision-section {
             position: relative;
@@ -180,13 +172,13 @@
             padding: 0; 
         }
         .vision-grid { 
-            display: grid;
+            display: grid; 
             grid-template-columns: 1fr 1fr; 
             gap: 3rem; 
             align-items: stretch; 
         }
         .vision-text {
-            background: rgba(10, 10, 10, 0.75);
+            background: rgba(10, 10, 10, 0.75); 
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             border-radius: 12px;
@@ -195,22 +187,27 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
             transition: transform 0.3s;
         }
-        .vision-text:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(212, 175, 55, 0.15);
+        .vision-text:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(212, 175, 55, 0.15); }
+        .vision-text h3 { color: var(--nexus-gold); margin-top: 0; font-size: 1.5rem; margin-bottom: 1rem; }
+        .vision-text p { color: #ccc; font-size: 1.1rem; }
+
+        /* 🚨 修正：新增開放選取與點擊拷貝的共用樣式 */
+        .copy-enable {
+            -webkit-user-select: text !important;
+            user-select: text !important;
+            white-space: nowrap !important; /* 強制不換行，撐開手機版頁寬 */
+            cursor: pointer;
         }
-        .vision-text h3 { color: var(--nexus-gold); margin-top: 0; font-size: 1.5rem; margin-bottom: 1rem;
-        }
-        .vision-text p { color: #ccc; font-size: 1.1rem;
+        .copy-enable:active {
+            opacity: 0.6;
         }
 
         /* =========================================
            PAGE 4: 核心載體 NEXUS
            ========================================= */
-        .nexus-section { text-align: center;
-            background-color: var(--card-bg);
-            border-top: 1px solid rgba(212, 175, 55, 0.1); border-bottom: 1px solid rgba(212, 175, 55, 0.1); padding: 4rem 0;
-        }
-        .nexus-section h2 { color: var(--nexus-gold); font-size: 2.2rem;
-        }
+        .nexus-section { text-align: center; background-color: var(--card-bg);
+            border-top: 1px solid rgba(212, 175, 55, 0.1); border-bottom: 1px solid rgba(212, 175, 55, 0.1); padding: 4rem 0; }
+        .nexus-section h2 { color: var(--nexus-gold); font-size: 2.2rem; }
         .nexus-image-container {
             margin: 3rem auto;
             max-width: 600px;
@@ -222,10 +219,10 @@
         }
 
         /* =========================================
-           PAGE 5: 五大金域 NFT (套用 P5 底圖)
+           PAGE 5: 五大金域 NFT
            ========================================= */
         .aureum-section { 
-            text-align: center;
+            text-align: center; 
             position: relative;
             background-color: var(--dark-bg);
             background-image: url("Code_Generated_Image(P5).png");
@@ -241,147 +238,93 @@
             z-index: 1;
             pointer-events: none;
         }
-        .aureum-section .container { position: relative; z-index: 2;
-        }
-        .aureum-section h2 { color: var(--nexus-gold); font-size: 2.2rem;
-        }
-        .aureum-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem; margin-top: 3rem;
-        }
+        .aureum-section .container { position: relative; z-index: 2; }
+        .aureum-section h2 { color: var(--nexus-gold); font-size: 2.2rem; }
+        .aureum-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.5rem; margin-top: 3rem; }
         .aureum-item { 
             padding: 2rem 1rem;
             background: rgba(10, 20, 17, 0.7); 
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border-radius: 12px; 
-            border-top: 2px solid var(--nexus-gold);
+            border-top: 2px solid var(--nexus-gold); 
             border-left: 1px solid rgba(212, 175, 55, 0.15);
             border-right: 1px solid rgba(212, 175, 55, 0.15);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8); 
             transition: transform 0.3s; 
             display: flex; flex-direction: column; align-items: center;
         }
-        .aureum-item:hover { transform: translateY(-10px);
-            border-top: 4px solid var(--nexus-gold); }
-        .aureum-item img { width: 120px; height: 120px;
-            object-fit: contain; margin-bottom: 1.5rem; }
-        .aureum-item h3 { color: var(--text-light); font-size: 1.1rem;
-            margin-bottom: 0.5rem; text-align: center; }
-        .aureum-item p { color: #aaa; font-size: 0.85rem;
-            text-align: center; }
+        .aureum-item:hover { transform: translateY(-10px); border-top: 4px solid var(--nexus-gold); }
+        .aureum-item img { width: 120px; height: 120px; object-fit: contain; margin-bottom: 1.5rem; }
+        .aureum-item h3 { color: var(--text-light); font-size: 1.1rem; margin-bottom: 0.5rem; text-align: center; }
+        .aureum-item p { color: #aaa; font-size: 0.85rem; text-align: center; }
 
         /* =========================================
-           PAGE 6: 全知大使 Vuvu (包含影片)
+           PAGE 6: 全知大使 Vuvu
            ========================================= */
-        .gov-container { display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-top: 4rem; margin-bottom: 4rem;
-        }
-        .gov-card { background: var(--card-bg); padding: 2.5rem; border-radius: 10px; border-left: 4px solid var(--nexus-gold);
-        }
-        .gov-card h3 { color: var(--nexus-gold); margin-bottom: 1.5rem; font-size: 1.5rem;
-        }
-        .vuvu-card-content { display: flex; align-items: center; gap: 2.5rem;
-        }
+        .gov-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-top: 4rem; margin-bottom: 4rem; }
+        .gov-card { background: var(--card-bg); padding: 2.5rem; border-radius: 10px; border-left: 4px solid var(--nexus-gold); }
+        .gov-card h3 { color: var(--nexus-gold); margin-bottom: 1.5rem; font-size: 1.5rem; }
+        .vuvu-card-content { display: flex; align-items: center; gap: 2.5rem; }
         
         .vuvu-video-container {
-            flex: 0 0 200px;
-            max-width: 200px; 
-            height: 200px; 
-            overflow: hidden;
-            border-radius: 25px; 
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.3); 
-            mix-blend-mode: screen; 
-            display: flex;
-            justify-content: center; 
-            align-items: center; 
-            background-color: #000;
+            flex: 0 0 200px; max-width: 200px; height: 200px; overflow: hidden;
+            border-radius: 25px; box-shadow: 0 0 25px rgba(212, 175, 55, 0.3); mix-blend-mode: screen; display: flex;
+            justify-content: center; align-items: center; background-color: #000;
         }
-        .vuvu-video-container video { 
-            width: 100%;
-            height: 100%; 
-            object-fit: cover; 
-            display: block; 
-            pointer-events: none; 
-        }
-        .vuvu-text-content { flex: 1;
-        }
+        .vuvu-video-container video { width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; }
+        .vuvu-text-content { flex: 1; }
 
         /* =========================================
-           PAGE 7: 治理哲學 (套用 P6 底圖與玻璃擬態)
+           PAGE 7: 治理哲學
            ========================================= */
         .governance-section {
-            position: relative;
-            background-color: var(--dark-bg);
+            position: relative; background-color: var(--dark-bg);
             background-image: url("Code_Generated_Image(P6).png");
             background-size: cover; background-position: center center; background-repeat: no-repeat;
-            padding: 4rem 0;
-            border-top: 1px solid rgba(212, 175, 55, 0.1); border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            padding: 4rem 0; border-top: 1px solid rgba(212, 175, 55, 0.1); border-bottom: 1px solid rgba(212, 175, 55, 0.1);
         }
         .governance-section::before {
-            content: "";
-            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
             background: linear-gradient(180deg, var(--dark-bg) 0%, rgba(5,10,8,0.5) 20%, rgba(5,10,8,0.5) 80%, var(--dark-bg) 100%);
             z-index: 1; pointer-events: none;
         }
-        .governance-section .container { position: relative; z-index: 2;
-            padding: 0; }
+        .governance-section .container { position: relative; z-index: 2; padding: 0; }
         .governance-section .gov-card {
-            background: rgba(10, 10, 10, 0.75);
-            backdrop-filter: blur(8px);
+            background: rgba(10, 10, 10, 0.75); backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px); box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
+
         /* =========================================
            PAGE 8: 文獻下載專區
            ========================================= */
-        .download-section { 
-            text-align: center;
-            background-color: var(--card-bg); 
-            border-top: 1px solid rgba(212, 175, 55, 0.1); 
-            padding: 4rem 0;
-        }
-        .download-section h2 { color: var(--nexus-gold); font-size: 2.2rem; margin-bottom: 1rem;
-        }
-        .download-desc { color: #ccc; font-size: 1.1rem; margin-bottom: 3rem;
-        }
-        .download-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1.5rem;
-        }
+        .download-section { text-align: center; background-color: var(--card-bg); border-top: 1px solid rgba(212, 175, 55, 0.1); padding: 4rem 0; }
+        .download-section h2 { color: var(--nexus-gold); font-size: 2.2rem; margin-bottom: 1rem; }
+        .download-desc { color: #ccc; font-size: 1.1rem; margin-bottom: 3rem; }
+        .download-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; }
         .download-card {
-            background: rgba(10, 20, 17, 0.7);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            border-radius: 12px;
-            padding: 2rem 1rem;
-            text-decoration: none;
-            transition: transform 0.3s, box-shadow 0.3s;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            background: rgba(10, 20, 17, 0.7); border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 12px; padding: 2rem 1rem; text-decoration: none; transition: transform 0.3s, box-shadow 0.3s;
+            display: flex; flex-direction: column; align-items: center;
         }
-        .download-card:hover { transform: translateY(-10px); border-color: var(--nexus-gold);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2); }
-        .download-icon { width: 40px;
-            height: 40px; fill: var(--nexus-gold); margin-bottom: 1rem; }
-        .download-title { color: var(--text-light); font-size: 1.1rem;
-            margin: 0; text-align: center; }
+        .download-card:hover { transform: translateY(-10px); border-color: var(--nexus-gold); box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2); }
+        .download-icon { width: 40px; height: 40px; fill: var(--nexus-gold); margin-bottom: 1rem; }
+        .download-title { color: var(--text-light); font-size: 1.1rem; margin: 0; text-align: center; }
 
         /* =========================================
-           新增：PAGE 8.5 開發者錢包 (移入 P6 底圖)
+           PAGE 8.5: 開發者錢包
            ========================================= */
         .wallet-section { 
-            position: relative;
-            /* 新增：配合遮罩 */
+            position: relative; 
             text-align: center; 
-            background-color: var(--card-bg);
+            background-color: var(--card-bg); 
             border-top: 1px solid rgba(212, 175, 55, 0.1); 
-            padding: 4rem 0;
-            /* 新增：將原本第9頁的 P6 底圖移至此處 */
+            padding: 4rem 0; 
             background-image: url("Code_Generated_Image(P6).png");
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
         }
-        /* 新增：配合底圖的玻璃擬態漸層遮罩 */
         .wallet-section::before {
             content: "";
             position: absolute;
@@ -389,24 +332,15 @@
             background: linear-gradient(180deg, var(--dark-bg) 0%, rgba(5,10,8,0.6) 20%, rgba(5,10,8,0.6) 80%, var(--dark-bg) 100%);
             z-index: 1; pointer-events: none;
         }
-        .wallet-section .container {
-            position: relative;
-            z-index: 2;
-        }
-        .wallet-section h2 { color: var(--nexus-gold); font-size: 2.2rem; margin-bottom: 1rem;
-        }
-        .wallet-desc { color: #ccc; font-size: 1.1rem; margin-bottom: 2rem;
-        }
-        .wallet-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
+        .wallet-section .container { position: relative; z-index: 2; }
+        .wallet-section h2 { color: var(--nexus-gold); font-size: 2.2rem; margin-bottom: 1rem; }
+        .wallet-desc { color: #ccc; font-size: 1.1rem; margin-bottom: 2rem; }
+        .wallet-list { display: flex; flex-direction: column; gap: 1rem; max-width: 700px; margin: 0 auto; }
+        
+        /* 🚨 修正：移除原本的換行設定，套用不換行以撐開手機寬度 */
         .wallet-item {
             background: rgba(10, 20, 17, 0.7);
-            backdrop-filter: blur(8px); /* 讓錢包卡片也有玻璃擬態以配合底圖 */
+            backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             border: 1px solid rgba(212, 175, 55, 0.3);
             border-radius: 12px;
@@ -414,103 +348,71 @@
             color: var(--text-light);
             font-family: monospace;
             font-size: 1.1rem;
-            word-break: break-all;
+            white-space: nowrap !important; /* 確保錢包地址不折行 */
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
 
         /* =========================================
-           PAGE 9: 免責聲明 (🚨 修正：標題與邊框改為金色)
+           PAGE 9: 免責聲明
            ========================================= */
         .disclaimer-section { 
-            position: relative;
-            background-color: var(--dark-bg); 
-            color: #888; 
-            font-size: 0.9rem; 
-            border-top: 1px solid #1a1a1a;
+            position: relative; background-color: var(--dark-bg); color: #888; font-size: 0.9rem; border-top: 1px solid #1a1a1a; 
         }
-        .disclaimer-section .container { position: relative; z-index: 2;
-        }
-        /* 增加：指定修正標題顏色為金色 */
-        .disclaimer-section h2 { color: var(--nexus-gold);
-            margin-bottom: 1.5rem; font-size: 1.5rem; text-align: center; }
+        .disclaimer-section .container { position: relative; z-index: 2; }
+        .disclaimer-section h2 { color: var(--nexus-gold); margin-bottom: 1.5rem; font-size: 1.5rem; text-align: center; }
         .disclaimer-item { 
-            margin-bottom: 1.5rem;
-            padding: 1.5rem; 
-            background: rgba(10, 10, 10, 0.7); 
-            backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-            border-radius: 8px;
-            /* 增加：指定修正項目框邊框為金色 */
-            border-left: 2px solid var(--nexus-gold);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            margin-bottom: 1.5rem; padding: 1.5rem; background: rgba(10, 10, 10, 0.7); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+            border-radius: 8px; border-left: 2px solid var(--nexus-gold); box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
-        .disclaimer-item h4 { color: #ddd; margin-top: 0;
-            margin-bottom: 0.5rem; }
+        .disclaimer-item h4 { color: #ddd; margin-top: 0; margin-bottom: 0.5rem; }
+
         /* =========================================
-           PAGE 10: 結尾 CTA (保留 P7 底圖)
+           PAGE 10: 結尾 CTA
            ========================================= */
         .footer-cta { 
-            position: relative;
-            text-align: center; padding: 5rem 2rem; background-color: var(--dark-bg);
-            background-image: url("Code_Generated_Image(P7).png");
-            background-size: cover; background-position: center center; background-repeat: no-repeat;
+            position: relative; text-align: center; padding: 5rem 2rem; background-color: var(--dark-bg);
+            background-image: url("Code_Generated_Image(P7).png"); background-size: cover; background-position: center center; background-repeat: no-repeat;
         }
         .footer-cta::before {
-            content: "";
-            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(0deg, rgba(0,77,64,0.85) 0%, rgba(5,10,8,0.5) 100%);
-            z-index: 1; pointer-events: none;
+            content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(0deg, rgba(0,77,64,0.85) 0%, rgba(5,10,8,0.5) 100%); z-index: 1; pointer-events: none;
         }
-        .footer-cta .container { position: relative; z-index: 2;
-        }
-        .footer-cta h2 { color: var(--nexus-gold); font-size: 2rem;
-        }
+        .footer-cta .container { position: relative; z-index: 2; }
+        .footer-cta h2 { color: var(--nexus-gold); font-size: 2rem; }
         
         /* Footer */
-        footer { background-color: #000;
-            color: #555; text-align: center; padding: 2rem 0; }
+        footer { background-color: #000; color: #555; text-align: center; padding: 2rem 0; }
         
         #backToTopBtn {
-            position: fixed;
-            bottom: 30px; right: 30px; width: 50px; height: 50px;
+            position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px;
             background-color: var(--nexus-gold); border-radius: 50%;
             display: flex; align-items: center; justify-content: center; cursor: pointer;
             opacity: 0; visibility: hidden; transition: all 0.3s; z-index: 9999;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
         }
-        #backToTopBtn.show { opacity: 1; visibility: visible;
-        }
-        #backToTopBtn:hover { transform: translateY(-5px); background-color: #eadd96;
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6); }
-        #backToTopBtn svg { width: 24px;
-            height: 24px; fill: var(--primary-green); }
+        #backToTopBtn.show { opacity: 1; visibility: visible; }
+        #backToTopBtn:hover { transform: translateY(-5px); background-color: #eadd96; box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6); }
+        #backToTopBtn svg { width: 24px; height: 24px; fill: var(--primary-green); }
 
         /* 響應式調整 */
         @media (max-width: 1024px) {
-            .aureum-grid, .download-grid { grid-template-columns: repeat(5, 1fr);
-            gap: 0.5rem; }
+            .aureum-grid, .download-grid { grid-template-columns: repeat(5, 1fr); gap: 0.5rem; }
         }
         @media (max-width: 768px) {
-            .vision-grid { grid-template-columns: 1fr;
-            }
-            /* .hero h1 media query 移除以配合自動縮放 */
-            .hero p.subtitle { font-size: 1.2rem;
-            }
-            .hero p.slogan { font-size: 1rem;
-            }
-            .aureum-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            } 
-            .vuvu-card-content { flex-direction: column; text-align: center;
-            }
-            .download-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            }
+            .nav-container { flex-direction: column; gap: 10px; }
+            .logo-area span { font-size: 1rem !important; white-space: normal; text-align: center; }
+            .social-icons { flex-wrap: wrap; justify-content: center; }
+            .vision-grid { grid-template-columns: 1fr; }
+            .hero p.subtitle { font-size: 1.2rem; }
+            .hero p.slogan { font-size: 1rem; }
+            .aureum-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); } 
+            .vuvu-card-content { flex-direction: column; text-align: center; }
+            .download-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
         }
         @media (max-width: 480px) {
-            .hero p.subtitle { font-size: 1rem;
-            }
-            .hero p.slogan { font-size: 0.8rem;
-            }
-            .aureum-grid, .download-grid { grid-template-columns: 1fr;
-            }
+            .hero p.subtitle { font-size: 1rem; }
+            .hero p.slogan { font-size: 0.8rem; }
+            .aureum-grid, .download-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -519,63 +421,51 @@
         <div class="nav-container">
             <a href="#" class="logo-area" translate="no">
                 <img src="imagelogo13.jpg" alt="LITU LOGO" class="remove-bg">
-                <span style="font-weight: 700; font-size: 1.2rem; color: var(--nexus-gold); letter-spacing: 1px;">LITU Degital Totem |
-                美麗寶島formosa</span>
+                <span style="font-weight: 700; font-size: 1.2rem; color: var(--nexus-gold); letter-spacing: 1px;">LITU Degital Totem | 美麗寶島formosa</span>
             </a>
         
             <div class="social-icons">
                 <a href="https://x.com/formosa1171625" target="_blank" title="X">
                     <svg viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.932zm-1.294 19.497h2.039L6.486 3.24H4.298l13.31 17.41z"/></svg>
                 </a>
-                
                 <a href="https://t.me/formosa_crypto_tg" target="_blank" title="Telegram">
-        
                     <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.11.02-1.93 1.23-5.46 3.62-.51.35-.98.52-1.4.51-.46-.01-1.35-.26-2.01-.48-.81-.27-1.45-.42-1.39-.88.03-.24.37-.48 1.02-.73 4-1.74 6.67-2.89 8.02-3.44 3.83-1.58 4.63-1.85 5.16-1.86.11 0 .37.03.54.17.14.12.18.28.19.4z"/></svg>
                 </a>
                 <a href="https://pump.fun/coin/cELeyWdBof4m8fYcDDvYwuBkyAgJSrspk4Rpb3ypump" target="_blank" title="Pump.fun">
-               
                     <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
                         <rect x="3" y="7" width="20" height="12" rx="6" ry="6" fill="#22c55e" stroke="#ffffff" stroke-width="2"/>
                         <rect x="6.5" y="9.5" width="13" height="2" rx="1" fill="#ffffff" opacity="0.85"/>
-                       
-                <circle cx="8.5" cy="13" r="1.8" fill="#ffffff"/>
+                        <circle cx="8.5" cy="13" r="1.8" fill="#ffffff"/>
                         <circle cx="17.5" cy="13" r="1.8" fill="#ffffff"/>
                     </svg>
                 </a>
                 <a href="https://opensea.io/collection/formosa-nft-collection" target="_blank" title="OpenSea">
-            
                     <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="#00A3FF">
                         <rect x="3" y="3" width="18" height="18" rx="3" ry="3" fill="#00A3FF"/>
                         <path d="M8 8 L12 13 L16 8" stroke="#ffffff" stroke-width="2" stroke-linecap="round" fill="transparent"/>
-                   
-                    <circle cx="12" cy="16" r="2" fill="#ffffff"/>
+                        <circle cx="12" cy="16" r="2" fill="#ffffff"/>
                     </svg>
                 </a>
                 
                 <div id="google_translate_element"></div>
                 
-      
-                  <div class="custom-lang-selector" translate="no">
+                <div class="custom-lang-selector" translate="no">
                     <select id="langSelect" onchange="translatePage(this.value)">
                         <option value="zh-TW">繁體中文</option>
                         <option value="zh-CN">简体中文</option>
-                
                         <option value="en">English</option>
                         <option value="ja">日本語</option>
                         <option value="ko">한국어</option>
                         <option value="es">Español</option>
-                
                         <option value="fr">Français</option>
                     </select>
                 </div>
             </div>
         </div>
-   
- </header>
+    </header>
 
     <section class="hero">
-        <h1>LITU Degital Totem 數位圖騰 |
-            美麗寶島的Web4生態文化</h1>
+        <h1>LITU Degital Totem 數位圖騰 | 美麗寶島的Web4生態文化</h1>
         <div class="hero-container">
             <img src="Code_Generated_Image(0).png" class="hero-img remove-bg" alt="Hero Base Image">
             <div class="hero-overlay">
@@ -583,7 +473,6 @@
                 <p class="slogan">共同守護 ✦ 共同建設 ✦ 共同享有</p>
             </div>
         </div>
- 
     </section>
 
     <section class="identity-section">
@@ -592,9 +481,8 @@
             <p class="identity-text" style="font-size: 1.1rem; max-width: 800px; margin: 0 auto; color: #ccc;">
                 LITU(里圖)是一場關於寶島文化與靈魂的數位溫暖旅程。<br>
                 LITU 的四⼤意涵 <br>
-               
-                • Legend (傳奇) ： 紀錄寶島的歷史與神話  • Identity (身分)： 提供數位島民的身分認同 <br>
-                • Totem (圖騰)： 轉化傳統意象為數位符號  • Universe (宇宙)： 建構去中⼼化的⽂化⽣態系<br>
+                • Legend (傳奇) 紀錄寶島的歷史與神話 • Identity (身分)提供數位島民的身分認同 <br>
+                • Totem (圖騰)： 轉化傳統意象為數位符號 • Universe (宇宙)： 建構去中⼼化的⽂化⽣態系<br>
                 這不是商業投機,而是對寶島山海、人文與精神的數位永存與全球傳承。
             </p>
         </div>
@@ -602,274 +490,48 @@
 
     <section class="vision-section">
         <div class="container">
-           
             <div class="vision-grid">
                 <div class="vision-text">
                     <h3>美麗寶島 Web4生態文化願景</h3>
-                    <p>發想自布農族 Litu 繩結為靈感,將寶島特色文化原民傳統、歷史地標與生機自然,轉化為鏈上永恆的圖騰基礎設施。</p>
+                    <p>發想來自寶島布農族 Litu 繩結為靈感,將寶島特色文化原民傳統、歷史建築、特色地標、特殊地景與生機自然,轉化為鏈上永恆的圖騰基礎設施。</p>
                 </div>
                 <div class="vision-text">
-     
-                   <h3>$FORMOSA 能量基地</h3>
+                    <h3>$FORMOSA 能量基地</h3>
                     <p>$FORMOSA 作為能量基地與社群門票,驅動數位圖騰的鑄造與社群共治。<br>
-                    CA：cELeyWdBof4m8fYcDDvYwuBkyAgJSrspk4Rpb3ypump
+                        <span class="copy-enable" onclick="copyToClipboard('cELeyWdBof4m8fYcDDvYwuBkyAgJSrspk4Rpb3ypump')" title="點擊複製合約地址">CA：cELeyWdBof4m8fYcDDvYwuBkyAgJSrspk4Rpb3ypump</span>
                     </p>
                 </div>
-       
-             </div>
+            </div>
         </div>
     </section>
 
     <section class="nexus-section">
         <div class="container">
             <h2>核心載體:NEXUS 金軸底座</h2>
-            <p class="nexus-text" style="font-size: 1.1rem;
-            max-width: 800px; margin: 0 auto; color: #ccc;">
-                • 每枚 NFT 皆建構於融合現代電路與傳統雲紋(回紋)的「NEXUS 金軸底座」之上。 <br>
-                這是寶島最古老的能量祭壇,將轉瞬即逝的文明,凝結為永恆的3D金質圖騰。 <br>
-                • 數位電路與萬字迷宮 (Digital Circuitry and the Wan Maze) <br>
-                背景線條融合了 PCB 電路走線與傳統「萬」字紋（Auspicious Wan Pattern）<br>
-            
-                這隱喻寶島是高度數位化的社會，同時也象徵傳統智慧與科技創新的生生不息、萬世繁榮。
+            <p class="nexus-text" style="font-size: 1.1rem; max-width: 800px; margin: 0 auto; color: #ccc;">
+                每枚 NFT 皆建構於融合現代電路與傳統雲紋(回紋)的「NEXUS 金軸底座」之上。 <br>
+                這是寶島最古老的能量祭壇,將轉瞬即逝的文明,凝結為永恆的3D金質圖騰。
             </p>
             <div class="nexus-image-container">
-                <video src="LITU_NEXUS_1.mp4" autoplay loop muted playsinline class="remove-bg" style="width: 100%; height: auto; pointer-events: none;"></video>
+                <video src="LITU_NEXUS.mp4" autoplay loop muted playsinline class="remove-bg" style="width: 100%; height: auto; pointer-events: none;"></video>
             </div>
         </div>
     </section>
 
     <section class="aureum-section">
         <div class="container">
-            
             <h2>五大金域系列 NFT</h2>
             <p class="aureum-desc" style="color: #999;">限量發行2,500枚,象徵寶島2,500 萬的靈魂。</p>
             <div class="aureum-grid">
                 <div class="aureum-item">
-               
                     <img src="Code_Generated_Image(1).png" alt="Heritage Pulse" class="remove-bg">
                     <h3>【金域・築跡】</h3>
-         
                     <p>地標與歷史建築<br>(101大樓、紅毛城)</p>
                 </div>
                 <div class="aureum-item">
-                  
                     <img src="Code_Generated_Image(2).png" alt="Peak of Divines" class="remove-bg">
                     <h3>【金域・聖岳】</h3>
-           
                     <p>特色景點與自然地景<br>(玉山、海岸線)</p>
                 </div>
                 <div class="aureum-item">
-                    
-                    <img src="Code_Generated_Image(3).png" alt="Sacred Rites" class="remove-bg">
-                    <h3>【金域・典祭】</h3>
-              
-                    <p>原住民文化與宗教信仰<br>(媽祖、圖騰)</p>
-                </div>
-                <div class="aureum-item">
-                    <img src="Code_Generated_Image(4).png" alt="Anima 
-                    Formosa" class="remove-bg">
-                    <h3>【金域・靈動】</h3>
-                 
-                    <p>特有動植物<br>(台灣黑熊、蝴蝶蘭)</p>
-                </div>
-                <div class="aureum-item">
-                    <img src="Code_Generated_Image(5).png" alt="Silicon Soul" class="remove-bg">
-                    
-                    <h3>【金域・矽魂】</h3>
-                    <p>科技世界第一系列<br>(晶圓片、科技標章)</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="container gov-container">
-        <div class="gov-card">
-            <h3>全知大使 Vuvu 與生態連動</h3>
-            <div class="vuvu-card-content">
-                <div class="vuvu-video-container">
- 
-                    <video autoplay loop muted playsinline>
-                        <source src="Vuvu_think.mp4" type="video/mp4">
-                    </video>
-                </div>
-               
-                <div class="vuvu-text-content">
-                    <p>搭載 ElizaOS 框架的AI代理人,擁有美麗寶島特有文化知識庫,主動於國際社群 (目前在Telegeram中測試) 推廣寶島之美。</p>
-                    <p>數位憑證與物理世界連動,視覺依時下天氣或祭典數據動態變化。自主監控並向推廣文化的成員發放代幣或勳章,實現全自動獎勵。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="governance-section">
-     
-        <div class="container">
-            <div class="gov-card">
-                <h3>治理哲學:無為而治</h3>
-                <p>摒棄傳統企業僵化模式,不預設固定時間表。自然成長、社群共識、權力完全移交。</p>
-                <p>100%公平發射,無預售、無團隊份額、無員工。</p>
-                <p>由國際 CTO (Community Takeover) 社群共治,每一位持有者皆為共同創辦人,最終走向完全去中心化的DAO。</p>
-            </div>
-   
-        </div>
-    </section>
-
-    <section class="download-section">
-        <div class="container">
-            <h2>文獻與指南下載專區</h2>
-            <p class="download-desc">深入探索 LITU Digitel Totem 協議的核心知識、治理憲章與白皮書，點擊即可下載 PDF 檔案。</p>
-            
-            <div class="download-grid">
-                <a href="LITU_Governance_Charter.pdf" download class="download-card">
-  
-                    <svg class="download-icon" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-                    <h3 class="download-title">社群治理憲章</h3>
-                </a>
-                <a href="Aureum_Series_Guide.pdf" download class="download-card">
-                
-                    <svg class="download-icon" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-                    <h3 class="download-title">金域系列探索手冊</h3>
-                </a>
-                <a href="Digital_Guardian_Manual.pdf" download class="download-card">
-                    <svg class="download-icon" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 
-                    18v2h14v-2H5z"/></svg>
-                    <h3 class="download-title">寶島數位守護手冊</h3>
-                </a>
-                <a href="LITU_Project_Pitch.pdf" download class="download-card">
-                    <svg class="download-icon" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-              
-                    <h3 class="download-title">項目深度簡報</h3>
-                </a>
-                <a href="LITU_Whitepaper_2026.pdf" download class="download-card">
-                    <svg class="download-icon" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-                    <h3 class="download-title">專案白皮書 2026</h3>
-      
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section class="wallet-section">
-        <div class="container">
-            <h2>開發者錢包</h2>
-            <p class="wallet-desc">基於代幣安全，開發者用 3 個錢包分散持有 $FORMOSA。<br><br>🛡️ 開發者錢包地址 / Developer Wallets:</p>
-            <div class="wallet-list">
-       
-                <div class="wallet-item">1.
-                9AE152n1kHYUK7kMuD8SwwiABYVCGsNc4964BHyLm4Lj</div>
-                <div class="wallet-item">2.
-                AERKVkyjmTmkNHTqVS2khLD4Ww6rAHfRK1TrkNgaiigP</div>
-                <div class="wallet-item">3.
-                J1qC9PtfkNVTUZPTx8jywKyZGQiY6Csr9SrbphxpkvTE</div>
-            </div>
-        </div>
-    </section>
-
-    <section class="disclaimer-section">
-        <div class="container">
-            <h2>重要免責聲明與風險控管</h2>
-            <div class="disclaimer-item">
-                <h4>非金融產品 / Not a Financial Product</h4>
-                
-                <p>所有的NFT 均定位為「文化藝術收藏品與數位紀念品」。不構成任何證券、投資合約或金融產品。</p>
-            </div>
-            <div class="disclaimer-item">
-                <h4>無財務承諾 / No Financial Promises</h4>
-                <p>本項目為私人發起的實驗性計畫,無「保證回購」、無分紅承諾、亦無任何內在價值或增值保證。</p>
-            </div>
-            <div class="disclaimer-item">
-             
-                <h4>純文化推廣 / Cultural Promotion Only</h4>
-                <p>參與本項目旨在文化支持與社群交流,不構成投資建議,參與者需完全自擔風險。</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="footer-cta">
-        <div class="container">
-            <h2>美麗寶島數位圖騰的時代,正式展開。</h2>
-            <p style="font-size: 1.2rem; color: #fff;">持有$FORMOSA,成為數位島民的一員。</p>
-        </div>
-   
-    </section>
-
-    <footer>
-        <div class="container" style="padding: 1rem 0;">
-            <p>LITU Degital Totem 數位圖騰 |
-            美麗寶島formosa文化生態 | Co-guarding, co-building, and co-sharing.</p>
-        </div>
-    </footer>
-
-    <div id="backToTopBtn" title="回到最上方">
-        <svg viewBox="0 0 24 24"><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/></svg>
-    </div>
-
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'zh-TW',
-         
-                includedLanguages: 'zh-TW,zh-CN,en,ja,ko,es,fr', 
-                autoDisplay: false
-            }, 'google_translate_element');
-        }
-
-        function translatePage(langCode) {
-            var selectField = document.querySelector(".goog-te-combo");
-            if (selectField) {
-                selectField.value = langCode;
-                selectField.dispatchEvent(new Event('change'));
-            }
-        }
-
-        window.onload = function() {
-            setTimeout(function() {
-                var userLang = navigator.language || navigator.userLanguage;
-                var langCode = 'zh-TW'; 
-                
-         
-                if (userLang.includes('zh-CN') || userLang.includes('zh-Hans')) {
-                    langCode = 'zh-CN';
-                } else if (userLang.startsWith('en')) {
-                    langCode = 'en';
-               
-                } else if (userLang.startsWith('ja')) {
-                    langCode = 'ja';
-                } else if (userLang.startsWith('ko')) {
-                    langCode = 'ko';
-                } else if (userLang.startsWith('es')) {
-           
-                    langCode = 'es';
-                } else if (userLang.startsWith('fr')) {
-                    langCode = 'fr';
-                }
-                
-               
-                if (langCode !== 'zh-TW') {
-                    translatePage(langCode);
-                    var customSelect = document.getElementById('langSelect');
-                    if (customSelect) customSelect.value = langCode;
-                }
-            }, 1000); 
-        };
-        const backToTopBtn = document.getElementById("backToTopBtn");
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 300) backToTopBtn.classList.add("show");
-            else backToTopBtn.classList.remove("show");
-        });
-        backToTopBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
-
-        document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'F12') { e.preventDefault(); }
-            if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'I') { e.preventDefault(); }
-            if ((e.ctrlKey || e.metaKey) && e.key === 'u') { e.preventDefault(); }
-            if ((e.ctrlKey || e.metaKey) && e.key === 's') { e.preventDefault(); }
-            
-            if ((e.ctrlKey || e.metaKey) && e.key === 'c') { e.preventDefault(); }
-        });
-    </script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-</body>
-</html>
+                    <img src="Code_Generated_Image(3).png" alt="Sacred Rites" class="remove-bg
