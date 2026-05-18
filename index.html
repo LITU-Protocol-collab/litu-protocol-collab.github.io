@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> 美麗寶島formosa數位圖騰䷢Solana </title>
-    <link rel="icon" href=""$FORMOSA_NEXUS.png"" type="image/png">
+    <link rel="icon" href="$FORMOSA_NEXUS.png" type="image/jpeg">
     <style>
         /* =========================================
            共用設定與變數
@@ -114,14 +114,8 @@
             border-bottom: 1px solid rgba(212, 175, 55, 0.2);
             overflow: hidden;
         }
-        .hero h1 { 
-            white-space: nowrap; 
-            font-size: min(4vw, 2.5rem);
-            color: var(--nexus-gold); 
-            margin-bottom: 2rem; 
-            letter-spacing: 2px; 
-            padding: 0 1rem; 
-        }
+        .hero h1 { font-size: 2.5rem;
+            color: var(--nexus-gold); margin-bottom: 2rem; letter-spacing: 2px; padding: 0 1rem; }
         .hero-container { position: relative; width: 95%;
             max-width: 1400px; margin: 0 auto; }
         .hero-img { width: 100%; height: auto;
@@ -145,8 +139,16 @@
         .identity-section { text-align: center; background-color: var(--card-bg); border-bottom: 1px solid #112b23; }
         .identity-section h2 { color: var(--nexus-gold); font-size: 2.2rem; margin-bottom: 1.5rem; }
 
+        /* 🚨 修正：拷貝功能樣式與強制不折行 */
+        .copy-enable {
+            -webkit-user-select: text !important;
+            user-select: text !important;
+            cursor: pointer;
+            white-space: nowrap !important;
+        }
+        .copy-enable:active { opacity: 0.6; }
         /* =========================================
-           PAGE 3: 願景與能量基地 (套用 P3 底圖)
+           PAGE 4: 核心載體 NEXUS
            ========================================= */
         .vision-section {
             position: relative;
@@ -171,6 +173,12 @@
             z-index: 2;
             padding: 0; 
         }
+        .vision-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 3rem; 
+            align-items: stretch; 
+        }
         .vision-text {
             background: rgba(10, 10, 10, 0.75); 
             backdrop-filter: blur(8px);
@@ -185,9 +193,6 @@
         .vision-text h3 { color: var(--nexus-gold); margin-top: 0; font-size: 1.5rem; margin-bottom: 1rem; }
         .vision-text p { color: #ccc; font-size: 1.1rem; }
 
-        /* =========================================
-           PAGE 4: 核心載體 NEXUS
-           ========================================= */
         .nexus-section { text-align: center; background-color: var(--card-bg);
             border-top: 1px solid rgba(212, 175, 55, 0.1); border-bottom: 1px solid rgba(212, 175, 55, 0.1); padding: 4rem 0; }
         .nexus-section h2 { color: var(--nexus-gold); font-size: 2.2rem; }
@@ -196,7 +201,7 @@
             max-width: 600px;
             transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
-        .nexus-image-container:hover video {
+        .nexus-image-container:hover img, .nexus-image-container:hover video {
             transform: scale(1.03);
             filter: contrast(1.3) brightness(1.2) drop-shadow(0 0 30px rgba(212, 175, 55, 0.6));
         }
@@ -259,7 +264,7 @@
         .vuvu-text-content { flex: 1; }
 
         /* =========================================
-           PAGE 7: 治理哲學 (套用 P6 底圖)
+           PAGE 7: 治理哲學 (套用 P6 底圖與玻璃擬態)
            ========================================= */
         .governance-section {
             position: relative; background-color: var(--dark-bg);
@@ -295,7 +300,7 @@
         .download-title { color: var(--text-light); font-size: 1.1rem; margin: 0; text-align: center; }
 
         /* =========================================
-           PAGE 8.5: 開發者錢包 (移入 P6 底圖)
+           PAGE 8.5: 開發者錢包
            ========================================= */
         .wallet-section { 
             position: relative; 
@@ -319,14 +324,6 @@
         .wallet-section h2 { color: var(--nexus-gold); font-size: 2.2rem; margin-bottom: 1rem; }
         .wallet-desc { color: #ccc; font-size: 1.1rem; margin-bottom: 2rem; }
         .wallet-list { display: flex; flex-direction: column; gap: 1rem; max-width: 700px; margin: 0 auto; }
-        
-        .copy-enable {
-            -webkit-user-select: text !important;
-            user-select: text !important;
-            cursor: pointer;
-        }
-        .copy-enable:active { opacity: 0.6; }
-
         .wallet-item {
             background: rgba(10, 20, 17, 0.7);
             backdrop-filter: blur(8px);
@@ -337,7 +334,6 @@
             color: var(--text-light);
             font-family: monospace;
             font-size: 1.1rem;
-            white-space: nowrap !important; /* 確保錢包地址不折行 */
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
 
@@ -390,7 +386,7 @@
             .aureum-grid, .download-grid { grid-template-columns: repeat(5, 1fr); gap: 0.5rem; }
         }
         @media (max-width: 768px) {
-            /* 🚨 手機版頁寬以合約地址不折行為標準，讓內容撐開畫面 */
+            /* 🚨 修正：手機版頁寬以合約地址不折行為標準 */
             body {
                 width: fit-content;
                 min-width: 100vw;
@@ -498,7 +494,7 @@
             <div class="vision-text" style="max-width: 800px; margin: 0 auto;">
                 <h3>$FORMOSA 能量基地</h3>
                 <p>$FORMOSA 作為能量基地與社群門票,驅動數位圖騰的鑄造與社群共治。<br>
-                    <span class="copy-enable" style="white-space: nowrap;" onclick="copyToClipboard('cELeyWdBof4m8fYcDDvYwuBkyAgJSrspk4Rpb3ypump')" title="點擊複製合約地址">CA：cELeyWdBof4m8fYcDDvYwuBkyAgJSrspk4Rpb3ypump</span>
+                    <span class="copy-enable" onclick="copyToClipboard('cELeyWdBof4m8fYcDDvYwuBkyAgJSrspk4Rpb3ypump')" title="點擊複製合約地址">CA：cELeyWdBof4m8fYcDDvYwuBkyAgJSrspk4Rpb3ypump</span>
                 </p>
             </div>
         </div>
@@ -507,7 +503,8 @@
     <section class="nexus-section">
         <div class="container">
             <h2>核心載體:NEXUS 金軸底座</h2>
-            <p class="nexus-text" style="font-size: 1.1rem; max-width: 800px; margin: 0 auto; color: #ccc;">
+            <p class="nexus-text" style="font-size: 1.1rem;
+            max-width: 800px; margin: 0 auto; color: #ccc;">
                 • 每枚 NFT 皆建構於融合現代電路與傳統雲紋(回紋)的「NEXUS 金軸底座」之上。 <br>
                 這是寶島最古老的能量祭壇,將轉瞬即逝的文明,凝結為永恆的3D金質圖騰。 <br>
                 • 數位電路與萬字迷宮 (Digital Circuitry and the Wan Maze) <br>
@@ -523,31 +520,41 @@
 
     <section class="aureum-section">
         <div class="container">
+            
             <h2>五大金域系列 NFT</h2>
             <p class="aureum-desc" style="color: #999;">限量發行2,500枚,象徵寶島2,500 萬的靈魂。</p>
             <div class="aureum-grid">
                 <div class="aureum-item">
+               
                     <img src="Code_Generated_Image(1).png" alt="Heritage Pulse" class="remove-bg">
                     <h3>【金域・築跡】</h3>
+         
                     <p>地標與歷史建築<br>(101大樓、紅毛城)</p>
                 </div>
                 <div class="aureum-item">
+                  
                     <img src="Code_Generated_Image(2).png" alt="Peak of Divines" class="remove-bg">
                     <h3>【金域・聖岳】</h3>
+           
                     <p>特色景點與自然地景<br>(玉山、海岸線)</p>
                 </div>
                 <div class="aureum-item">
+                    
                     <img src="Code_Generated_Image(3).png" alt="Sacred Rites" class="remove-bg">
                     <h3>【金域・典祭】</h3>
+              
                     <p>原住民文化與宗教信仰<br>(媽祖、圖騰)</p>
                 </div>
                 <div class="aureum-item">
-                    <img src="Code_Generated_Image(4).png" alt="Anima Formosa" class="remove-bg">
+                    <img src="Code_Generated_Image(4).png" alt="Anima 
+                    Formosa" class="remove-bg">
                     <h3>【金域・靈動】</h3>
+                 
                     <p>特有動植物<br>(台灣黑熊、蝴蝶蘭)</p>
                 </div>
                 <div class="aureum-item">
                     <img src="Code_Generated_Image(5).png" alt="Silicon Soul" class="remove-bg">
+                    
                     <h3>【金域・矽魂】</h3>
                     <p>科技世界第一系列<br>(晶圓片、科技標章)</p>
                 </div>
@@ -557,13 +564,16 @@
 
     <section class="container gov-container">
         <div class="gov-card">
-            <h3>全知大使 Vuvu 與生態連動</h3>
+       
+     <h3>全知大使 Vuvu 與生態連動</h3>
             <div class="vuvu-card-content">
                 <div class="vuvu-video-container">
+ 
                     <video autoplay loop muted playsinline>
                         <source src="Vuvu_think.mp4" type="video/mp4">
                     </video>
                 </div>
+               
                 <div class="vuvu-text-content">
                     <p>搭載 ElizaOS 框架的AI代理人,擁有美麗寶島特有文化知識庫,主動於國際社群 (目前在Telegram中測試) 推廣寶島之美。</p>
                     <p>數位憑證與物理世界連動,視覺依時下天氣或祭典數據動態變化。自主監控並向推廣文化的成員發放代幣或勳章,實現全自動獎勵。</p>
@@ -573,6 +583,7 @@
     </section>
     
     <section class="governance-section">
+     
         <div class="container">
             <div class="gov-card">
                 <h3>治理哲學:無為而治</h3>
@@ -580,6 +591,7 @@
                 <p>100%公平發射,無預售、無團隊份額、無員工。</p>
                 <p>由國際 CTO (Community Takeover) 社群共治,每一位持有者皆為共同創辦人,最終走向完全去中心化的DAO。</p>
             </div>
+   
         </div>
     </section>
 
@@ -587,26 +599,32 @@
         <div class="container">
             <h2>文獻與指南下載專區</h2>
             <p class="download-desc">深入探索 LITU Digitel Totem 協議的核心知識、治理憲章與白皮書，點擊即可下載 PDF 檔案。</p>
-            
+        
+    
             <div class="download-grid">
                 <a href="LITU_Governance_Charter.pdf" download class="download-card">
+  
                     <svg class="download-icon" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
                     <h3 class="download-title">社群治理憲章</h3>
                 </a>
                 <a href="Aureum_Series_Guide.pdf" download class="download-card">
+                
                     <svg class="download-icon" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
                     <h3 class="download-title">金域系列探索手冊</h3>
                 </a>
                 <a href="Digital_Guardian_Manual.pdf" download class="download-card">
-                    <svg class="download-icon" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                    <svg class="download-icon" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 
+                    18v2h14v-2H5z"/></svg>
                     <h3 class="download-title">寶島數位守護手冊</h3>
                 </a>
                 <a href="LITU_Project_Pitch.pdf" download class="download-card">
-                    <svg class="download-icon" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+      
+              <svg class="download-icon" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
                     <h3 class="download-title">項目深度簡報</h3>
                 </a>
                 <a href="LITU_Whitepaper_2026.pdf" download class="download-card">
-                    <svg class="download-icon" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                    
+ <svg class="download-icon" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
                     <h3 class="download-title">專案白皮書 2026</h3>
                 </a>
             </div>
@@ -628,31 +646,39 @@
     <section class="disclaimer-section">
         <div class="container">
             <h2>重要免責聲明與風險控管</h2>
-            <div class="disclaimer-item">
+  
+          <div class="disclaimer-item">
                 <h4>非金融產品 / Not a Financial Product</h4>
+                
                 <p>所有的NFT 均定位為「文化藝術收藏品與數位紀念品」。不構成任何證券、投資合約或金融產品。</p>
             </div>
             <div class="disclaimer-item">
                 <h4>無財務承諾 / No Financial Promises</h4>
-                <p>本項目為私人發起的實驗性計畫,無「保證回購」、無分紅承諾、亦無任何內在價值或增值保證。</p>
+      
+          <p>本項目為私人發起的實驗性計畫,無「保證回購」、無分紅承諾、亦無任何內在價值或增值保證。</p>
             </div>
             <div class="disclaimer-item">
+             
                 <h4>純文化推廣 / Cultural Promotion Only</h4>
                 <p>參與本項目旨在文化支持與社群交流,不構成投資建議,參與者需完全自擔風險。</p>
             </div>
         </div>
     </section>
 
-    <section class="footer-cta">
+    <section 
+ class="footer-cta">
         <div class="container">
             <h2>美麗寶島數位圖騰的時代,正式展開。</h2>
-            <p style="font-size: 1.2rem; color: #fff;">持有$FORMOSA,成為數位島民的一員。</p>
+            <p style="font-size: 1.2rem;
+ color: #fff;">持有$FORMOSA,成為數位島民的一員。</p>
         </div>
+   
     </section>
 
     <footer>
         <div class="container" style="padding: 1rem 0;">
-            <p>LITU Degital Totem 數位圖騰 | 美麗寶島formosa文化生態 | Co-guarding, co-building, and co-sharing.</p>
+            <p>LITU Degital Totem 數位圖騰 |
+            美麗寶島formosa文化生態 | Co-guarding, co-building, and co-sharing.</p>
         </div>
     </footer>
 
@@ -661,7 +687,7 @@
     </div>
 
     <script type="text/javascript">
-        // 🚨 修正：新增複製提示腳本
+        // 🚨 修正：新增複製到剪貼簿功能腳本
         function copyToClipboard(text) {
             if (navigator.clipboard) {
                 navigator.clipboard.writeText(text).then(() => {
@@ -681,62 +707,72 @@
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'zh-TW',
+         
                 includedLanguages: 'zh-TW,zh-CN,en,ja,ko,es,fr', 
                 autoDisplay: false
             }, 'google_translate_element');
-        }
+  
+      }
 
+        // 2. 自訂下拉選單連動 Google 翻譯
         function translatePage(langCode) {
             var selectField = document.querySelector(".goog-te-combo");
             if (selectField) {
                 selectField.value = langCode;
-                selectField.dispatchEvent(new Event('change'));
+ selectField.dispatchEvent(new Event('change'));
             }
         }
 
+        // 3. 自動偵測使用者系統語系並切換
         window.onload = function() {
             setTimeout(function() {
                 var userLang = navigator.language || navigator.userLanguage;
                 var langCode = 'zh-TW'; 
-                
+               
+ 
                 if (userLang.includes('zh-CN') || userLang.includes('zh-Hans')) {
                     langCode = 'zh-CN';
                 } else if (userLang.startsWith('en')) {
                     langCode = 'en';
-                } else if (userLang.startsWith('ja')) {
+               
+ } else if (userLang.startsWith('ja')) {
                     langCode = 'ja';
                 } else if (userLang.startsWith('ko')) {
                     langCode = 'ko';
                 } else if (userLang.startsWith('es')) {
-                    langCode = 'es';
+           
+         langCode = 'es';
                 } else if (userLang.startsWith('fr')) {
                     langCode = 'fr';
                 }
                 
-                if (langCode !== 'zh-TW') {
+               
+  if (langCode !== 'zh-TW') {
                     translatePage(langCode);
                     var customSelect = document.getElementById('langSelect');
-                    if (customSelect) customSelect.value = langCode;
+ if (customSelect) customSelect.value = langCode;
                 }
             }, 1000); 
         };
-
+ // 4. 回到頂部按鈕邏輯
         const backToTopBtn = document.getElementById("backToTopBtn");
-        window.addEventListener("scroll", () => {
+ window.addEventListener("scroll", () => {
             if (window.scrollY > 300) backToTopBtn.classList.add("show");
             else backToTopBtn.classList.remove("show");
         });
-        backToTopBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+ backToTopBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
+        // 5. 防盜模組：防右鍵、防快捷鍵、防檢視原始碼
         document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
-        document.addEventListener('keydown', function(e) {
+ document.addEventListener('keydown', function(e) {
             if (e.key === 'F12') { e.preventDefault(); }
             if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'I') { e.preventDefault(); }
             if ((e.ctrlKey || e.metaKey) && e.key === 'u') { e.preventDefault(); }
             if ((e.ctrlKey || e.metaKey) && e.key === 's') { e.preventDefault(); }
-            if ((e.ctrlKey || e.metaKey) && e.key === 'c') { e.preventDefault(); }
+            
+ if ((e.ctrlKey || e.metaKey) && e.key === 'c') { e.preventDefault(); }
         });
-    </script>
+ </script>
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
