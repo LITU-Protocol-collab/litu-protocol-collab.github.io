@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> 美麗寶島formosa數位圖騰䷢Solana </title>
-    <link rel="icon" href="$FORMOSA_NEXUS.png" type="image/jpeg">
+    <link rel="icon" href="Gemini_Generated_Image_dep41dep41dep41d_clean.png" type="image/png">
     <style>
         /* =========================================
            共用設定與變數
@@ -114,8 +114,14 @@
             border-bottom: 1px solid rgba(212, 175, 55, 0.2);
             overflow: hidden;
         }
-        .hero h1 { font-size: 2.5rem;
-            color: var(--nexus-gold); margin-bottom: 2rem; letter-spacing: 2px; padding: 0 1rem; }
+        .hero h1 { 
+            white-space: nowrap; 
+            font-size: min(4vw, 2.5rem);
+            color: var(--nexus-gold); 
+            margin-bottom: 2rem; 
+            letter-spacing: 2px; 
+            padding: 0 1rem; 
+        }
         .hero-container { position: relative; width: 95%;
             max-width: 1400px; margin: 0 auto; }
         .hero-img { width: 100%; height: auto;
@@ -165,12 +171,6 @@
             z-index: 2;
             padding: 0; 
         }
-        .vision-grid { 
-            display: grid; 
-            grid-template-columns: 1fr 1fr; 
-            gap: 3rem; 
-            align-items: stretch; 
-        }
         .vision-text {
             background: rgba(10, 10, 10, 0.75); 
             backdrop-filter: blur(8px);
@@ -196,7 +196,7 @@
             max-width: 600px;
             transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
-        .nexus-image-container:hover img, .nexus-image-container:hover video {
+        .nexus-image-container:hover video {
             transform: scale(1.03);
             filter: contrast(1.3) brightness(1.2) drop-shadow(0 0 30px rgba(212, 175, 55, 0.6));
         }
@@ -243,7 +243,7 @@
         .aureum-item p { color: #aaa; font-size: 0.85rem; text-align: center; }
 
         /* =========================================
-           PAGE 6: 全知大使 Vuvu
+           PAGE 6: 全知大使 Vuvu (包含影片)
            ========================================= */
         .gov-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-top: 4rem; margin-bottom: 4rem; }
         .gov-card { background: var(--card-bg); padding: 2.5rem; border-radius: 10px; border-left: 4px solid var(--nexus-gold); }
@@ -259,7 +259,7 @@
         .vuvu-text-content { flex: 1; }
 
         /* =========================================
-           PAGE 7: 治理哲學 (套用 P6 底圖與玻璃擬態)
+           PAGE 7: 治理哲學 (套用 P6 底圖)
            ========================================= */
         .governance-section {
             position: relative; background-color: var(--dark-bg);
@@ -295,7 +295,7 @@
         .download-title { color: var(--text-light); font-size: 1.1rem; margin: 0; text-align: center; }
 
         /* =========================================
-           PAGE 8.5: 開發者錢包
+           PAGE 8.5: 開發者錢包 (移入 P6 底圖)
            ========================================= */
         .wallet-section { 
             position: relative; 
@@ -319,6 +319,14 @@
         .wallet-section h2 { color: var(--nexus-gold); font-size: 2.2rem; margin-bottom: 1rem; }
         .wallet-desc { color: #ccc; font-size: 1.1rem; margin-bottom: 2rem; }
         .wallet-list { display: flex; flex-direction: column; gap: 1rem; max-width: 700px; margin: 0 auto; }
+        
+        .copy-enable {
+            -webkit-user-select: text !important;
+            user-select: text !important;
+            cursor: pointer;
+        }
+        .copy-enable:active { opacity: 0.6; }
+
         .wallet-item {
             background: rgba(10, 20, 17, 0.7);
             backdrop-filter: blur(8px);
@@ -329,7 +337,7 @@
             color: var(--text-light);
             font-family: monospace;
             font-size: 1.1rem;
-            word-break: break-all;
+            white-space: nowrap !important; /* 確保錢包地址不折行 */
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
 
@@ -375,17 +383,22 @@
         #backToTopBtn:hover { transform: translateY(-5px); background-color: #eadd96; box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6); }
         #backToTopBtn svg { width: 24px; height: 24px; fill: var(--primary-green); }
 
-        /* 響應式調整 */
+        /* =========================================
+           響應式 RWD 調整
+           ========================================= */
         @media (max-width: 1024px) {
             .aureum-grid, .download-grid { grid-template-columns: repeat(5, 1fr); gap: 0.5rem; }
         }
         @media (max-width: 768px) {
-            /* 🚨 修正：手機版頁寬以合約地址不折行為標準 */
+            /* 🚨 手機版頁寬以合約地址不折行為標準，讓內容撐開畫面 */
             body {
                 width: fit-content;
                 min-width: 100vw;
             }
-            .vision-grid { grid-template-columns: 1fr; }
+            .nav-container { flex-direction: column; gap: 10px; }
+            .logo-area span { font-size: 1rem !important; white-space: normal; text-align: center; }
+            .social-icons { flex-wrap: wrap; justify-content: center; }
+            
             .hero p.subtitle { font-size: 1.2rem; }
             .hero p.slogan { font-size: 1rem; }
             .aureum-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); } 
@@ -464,8 +477,8 @@
             <p class="identity-text" style="font-size: 1.1rem; max-width: 800px; margin: 0 auto; color: #ccc;">
                 LITU(里圖)是一場關於寶島文化與靈魂的數位溫暖旅程。<br>
                 LITU 的四⼤意涵 <br>
-                • Legend (傳奇) 紀錄寶島的歷史與神話 • Identity (身分)提供數位島民的身分認同 <br>
-                • Totem (圖騰)： 轉化傳統意象為數位符號 • Universe (宇宙)： 建構去中⼼化的⽂化⽣態系<br>
+                • Legend (傳奇) ： 紀錄寶島的歷史與神話  • Identity (身分)： 提供數位島民的身分認同 <br>
+                • Totem (圖騰)： 轉化傳統意象為數位符號  • Universe (宇宙)： 建構去中⼼化的⽂化⽣態系<br>
                 這不是商業投機,而是對寶島山海、人文與精神的數位永存與全球傳承。
             </p>
         </div>
@@ -484,8 +497,8 @@
         <div class="container">
             <div class="vision-text" style="max-width: 800px; margin: 0 auto;">
                 <h3>$FORMOSA 能量基地</h3>
-                <p style="white-space: nowrap;">$FORMOSA 作為能量基地與社群門票,驅動數位圖騰的鑄造與社群共治。<br>
-                    CA：cELeyWdBof4m8fYcDDvYwuBkyAgJSrspk4Rpb3ypump
+                <p>$FORMOSA 作為能量基地與社群門票,驅動數位圖騰的鑄造與社群共治。<br>
+                    <span class="copy-enable" style="white-space: nowrap;" onclick="copyToClipboard('cELeyWdBof4m8fYcDDvYwuBkyAgJSrspk4Rpb3ypump')" title="點擊複製合約地址">CA：cELeyWdBof4m8fYcDDvYwuBkyAgJSrspk4Rpb3ypump</span>
                 </p>
             </div>
         </div>
@@ -495,8 +508,12 @@
         <div class="container">
             <h2>核心載體:NEXUS 金軸底座</h2>
             <p class="nexus-text" style="font-size: 1.1rem; max-width: 800px; margin: 0 auto; color: #ccc;">
-                每枚 NFT 皆建構於融合現代電路與傳統雲紋(回紋)的「NEXUS 金軸底座」之上。 <br>
-                這是寶島最古老的能量祭壇,將轉瞬即逝的文明,凝結為永恆的3D金質圖騰。
+                • 每枚 NFT 皆建構於融合現代電路與傳統雲紋(回紋)的「NEXUS 金軸底座」之上。 <br>
+                這是寶島最古老的能量祭壇,將轉瞬即逝的文明,凝結為永恆的3D金質圖騰。 <br>
+                • 數位電路與萬字迷宮 (Digital Circuitry and the Wan Maze) <br>
+                背景線條融合了 PCB 電路走線與傳統「萬」字紋（Auspicious Wan Pattern）<br>
+            
+                這隱喻寶島是高度數位化的社會，同時也象徵傳統智慧與科技創新的生生不息、萬世繁榮。
             </p>
             <div class="nexus-image-container">
                 <video src="LITU_NEXUS.mp4" autoplay loop muted playsinline class="remove-bg" style="max-width: 100%; height: auto; pointer-events: none;"></video>
@@ -601,9 +618,9 @@
             <h2>開發者錢包</h2>
             <p class="wallet-desc">基於代幣安全，開發者用 3 個錢包分散持有 $FORMOSA。<br><br>🛡️ 開發者錢包地址 / Developer Wallets:</p>
             <div class="wallet-list">
-                <div class="wallet-item">1. 9AE152n1kHYUK7kMuD8SwwiABYVCGsNc4964BHyLm4Lj</div>
-                <div class="wallet-item">2. AERKVkyjmTmkNHTqVS2khLD4Ww6rAHfRK1TrkNgaiigP</div>
-                <div class="wallet-item">3. J1qC9PtfkNVTUZPTx8jywKyZGQiY6Csr9SrbphxpkvTE</div>
+                <div class="wallet-item copy-enable" onclick="copyToClipboard('9AE152n1kHYUK7kMuD8SwwiABYVCGsNc4964BHyLm4Lj')" title="點擊複製">1. 9AE152n1kHYUK7kMuD8SwwiABYVCGsNc4964BHyLm4Lj</div>
+                <div class="wallet-item copy-enable" onclick="copyToClipboard('AERKVkyjmTmkNHTqVS2khLD4Ww6rAHfRK1TrkNgaiigP')" title="點擊複製">2. AERKVkyjmTmkNHTqVS2khLD4Ww6rAHfRK1TrkNgaiigP</div>
+                <div class="wallet-item copy-enable" onclick="copyToClipboard('J1qC9PtfkNVTUZPTx8jywKyZGQiY6Csr9SrbphxpkvTE')" title="點擊複製">3. J1qC9PtfkNVTUZPTx8jywKyZGQiY6Csr9SrbphxpkvTE</div>
             </div>
         </div>
     </section>
@@ -644,6 +661,23 @@
     </div>
 
     <script type="text/javascript">
+        // 🚨 修正：新增複製提示腳本
+        function copyToClipboard(text) {
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text).then(() => {
+                    alert('已成功複製：\n' + text);
+                });
+            } else {
+                const input = document.createElement('input');
+                input.value = text;
+                document.body.appendChild(input);
+                input.select();
+                document.execCommand('copy');
+                document.body.removeChild(input);
+                alert('已成功複製：\n' + text);
+            }
+        }
+
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'zh-TW',
