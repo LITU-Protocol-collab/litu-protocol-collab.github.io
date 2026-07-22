@@ -421,3 +421,47 @@ body { top: 0 !important; position: static !important; }
   .hero-copy .button { min-height: 42px; padding: .55rem 1.1rem; }
   .hero-copy .hero-proof { margin-top: .9rem; }
 }
+
+/* 手機首頁：標題縮小並拉回草繩結下方的黃色框留白，避免超出畫面。 */
+@media (max-width: 560px) {
+  .hero {
+    position: relative;
+    padding: 1.25rem 0 3.5rem;
+  }
+
+  .hero-visual { width: 94vw; }
+
+  .hero-copy {
+    width: 82vw;
+    margin-top: -4.6rem;
+    z-index: 3;
+  }
+
+  .hero-copy .eyebrow {
+    margin: 0 0 .45rem;
+    font-size: .58rem;
+    line-height: 1.45;
+    letter-spacing: .16em;
+  }
+
+  .hero-copy h1 {
+    margin: 0 0 1rem;
+    font-size: clamp(2rem, 9.5vw, 2.75rem);
+    line-height: 1.05;
+    letter-spacing: -.045em;
+    text-wrap: balance;
+  }
+
+  .hero-copy .hero-lead {
+    max-width: 100%;
+    margin: 0 auto;
+    font-size: .9rem;
+    line-height: 1.7;
+  }
+
+  .hero-copy .hero-actions { margin-top: 1.25rem; }
+  .hero-copy .button { min-height: 44px; }
+
+  footer { padding-bottom: calc(2rem + env(safe-area-inset-bottom)); }
+  .back-to-top { padding: .55rem 0; color: var(--gold); }
+}
