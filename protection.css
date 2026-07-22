@@ -433,22 +433,33 @@ body { top: 0 !important; position: static !important; }
 
   .hero-copy {
     width: 82vw;
-    margin-top: -4.6rem;
+    position: static;
+    margin-top: 1.25rem;
     z-index: 3;
   }
 
   .hero-copy .eyebrow {
-    margin: 0 0 .45rem;
-    font-size: .58rem;
+    position: absolute;
+    top: calc(1.25rem + 32vw);
+    left: 50%;
+    width: 78vw;
+    margin: 0;
+    transform: translateX(-50%);
+    font-size: .48rem;
     line-height: 1.45;
-    letter-spacing: .16em;
+    letter-spacing: .14em;
   }
 
   .hero-copy h1 {
-    margin: 0 0 1rem;
-    font-size: clamp(2rem, 9.5vw, 2.75rem);
-    line-height: 1.05;
-    letter-spacing: -.045em;
+    position: absolute;
+    top: calc(1.25rem + 36vw);
+    left: 50%;
+    width: 80vw;
+    margin: 0;
+    transform: translateX(-50%);
+    font-size: clamp(1.15rem, 5.3vw, 1.45rem);
+    line-height: 1.08;
+    letter-spacing: -.035em;
     text-wrap: balance;
   }
 
