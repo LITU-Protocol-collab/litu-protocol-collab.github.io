@@ -1,0 +1,423 @@
+/* 保留原網站的素材保護，同時讓錢包與合約地址可正常選取及複製。 */
+body {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+img,
+video {
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+.copy-address,
+.wallet-address {
+  -webkit-user-select: text;
+  user-select: text;
+  -webkit-touch-callout: default;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 首頁主視覺：原圖同時是 LITU 主題封面與文化內容，不再當成側邊裝飾圖。 */
+.hero {
+  display: flex;
+  width: 100%;
+  max-width: none;
+  min-height: calc(100svh - 78px);
+  margin: 0;
+  padding: 0;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(5, 14, 11, .9) 0%, rgba(5, 14, 11, .48) 42%, rgba(5, 14, 11, .06) 72%),
+    linear-gradient(0deg, rgba(5, 14, 11, .94) 0%, rgba(5, 14, 11, .08) 50%, rgba(5, 14, 11, .32) 100%);
+}
+
+.hero-copy {
+  z-index: 3;
+  width: min(720px, 58vw);
+  margin: 0 0 clamp(3rem, 8vh, 7rem) max(5vw, calc((100vw - 1180px) / 2));
+  padding: 0;
+}
+
+.hero h1 {
+  font-size: clamp(3.2rem, 6.3vw, 6.5rem);
+  text-shadow: 0 8px 30px rgba(0, 0, 0, .45);
+}
+
+.hero-visual {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  inset: auto;
+  z-index: 0;
+  width: 80vw;
+  margin: 0;
+  height: auto;
+  max-height: calc(100svh - 110px);
+  transform: translate(-50%, -50%);
+}
+
+.hero-visual img {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  object-position: center;
+  filter: none;
+}
+
+.hero-visual figcaption {
+  right: max(4vw, calc((100vw - 1180px) / 2));
+  bottom: 2.2rem;
+  left: auto;
+  width: auto;
+  max-width: 420px;
+  z-index: 4;
+  padding: .7rem 1rem;
+  text-align: right;
+  font-size: .78rem;
+  background: rgba(6, 16, 13, .55);
+}
+
+.hero-glow { display: none; }
+
+/* VUVU 影片水平置中，僅呈現影片中央的正方形區域。 */
+.agent-card.vuvu video {
+  width: 60%;
+  height: auto;
+  max-height: none;
+  aspect-ratio: 1 / 1;
+  margin: auto;
+  align-self: center;
+  object-fit: cover;
+  object-position: center center;
+  border: 1px solid rgba(215, 183, 90, .32);
+  border-radius: 18px;
+  opacity: 1;
+  mask-image: none;
+  -webkit-mask-image: none;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, .35);
+}
+
+.nav-social {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+
+.nav-social a {
+  display: grid;
+  min-width: 34px;
+  height: 34px;
+  padding: 0 .55rem;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--gold) !important;
+  font-size: .66rem !important;
+  font-weight: 800;
+  letter-spacing: .05em;
+}
+
+.nav-social a:hover { border-color: var(--gold); }
+
+.language-picker select {
+  height: 34px;
+  max-width: 106px;
+  padding: 0 .55rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  outline: none;
+  background: #0b2019;
+  color: var(--gold);
+  font: inherit;
+  font-size: .66rem;
+  cursor: pointer;
+}
+
+#google_translate_element,
+.skiptranslate,
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+body { top: 0 !important; position: static !important; }
+
+.wallet-divider {
+  height: 1px;
+  margin: 1.7rem 0;
+  background: var(--line);
+}
+
+.wallet-list {
+  display: grid;
+  gap: .55rem;
+}
+
+.wallet-address { margin: 0; }
+
+.disclaimer { background: #091a15; }
+
+.disclaimer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.disclaimer-grid article {
+  padding: 1.6rem;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: rgba(6, 16, 13, .55);
+}
+
+.disclaimer-grid h3 {
+  margin-top: 0;
+  color: var(--gold);
+  font-family: Georgia, "Noto Serif TC", serif;
+}
+
+.disclaimer-grid p {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: .86rem;
+}
+
+/* 維持原網站「文化頁／資訊頁」交替節奏：奇數主題頁套用既有文化底圖。 */
+.cultural-bg {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--ink);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.cultural-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    linear-gradient(180deg, rgba(6, 16, 13, .96) 0%, rgba(6, 16, 13, .66) 24%, rgba(6, 16, 13, .72) 76%, rgba(6, 16, 13, .97) 100%),
+    radial-gradient(circle at 50% 38%, rgba(15, 91, 72, .12), transparent 64%);
+}
+
+.cultural-p3 { background-image: url("Code_Generated_Image(P3).png"); }
+.cultural-p5 { background-image: url("Code_Generated_Image(P5).png"); }
+.cultural-p6 { background-image: url("Code_Generated_Image(P6).png"); }
+.cultural-p7 { background-image: url("Code_Generated_Image(P7).png"); }
+
+.cultural-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .65s ease, transform .65s ease;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 900px) {
+  .disclaimer-grid { grid-template-columns: 1fr; }
+  .nav-social { justify-content: center; }
+  .language-picker select { width: 100%; max-width: none; }
+  .cultural-bg { background-attachment: scroll; }
+  .hero { min-height: 820px; }
+  .hero-copy { width: 88vw; margin: 0 6vw 5rem; }
+  .hero-visual { width: 88vw; max-width: none; }
+  .hero-visual img { object-position: center; }
+  .hero-visual figcaption { right: 6vw; bottom: 1.5rem; }
+  .agent-card.vuvu video { width: 60%; max-height: none; }
+}
+
+@media (max-width: 560px) {
+  .hero { min-height: 760px; }
+  .hero h1 { font-size: clamp(2.7rem, 13vw, 4rem); }
+  .hero-lead { max-width: 92%; }
+  .hero-proof { display: none; }
+  .hero-visual { width: 92vw; }
+  .hero-visual img { object-position: center; }
+  .hero-visual figcaption { display: none; }
+  .agent-card.vuvu video { width: 60%; max-height: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* 最終主圖定位：圖片本體保持正常文件流，80vw 並以 auto margin 真正水平置中。 */
+.hero {
+  display: block;
+  min-height: 0;
+  padding: clamp(2rem, 4vw, 4rem) 0;
+}
+
+.hero-visual {
+  position: relative;
+  inset: auto;
+  top: auto;
+  left: auto;
+  width: 80vw;
+  height: auto;
+  max-height: none;
+  margin: 0 auto;
+  transform: none;
+}
+
+.hero-visual img {
+  width: 100%;
+  height: auto;
+}
+
+.hero-copy {
+  position: absolute;
+  left: 50%;
+  bottom: 7%;
+  width: min(1040px, 70vw);
+  margin: 0;
+  padding: 1.5rem;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.hero-copy .hero-lead { margin-right: auto; margin-left: auto; }
+.hero-copy .hero-actions,
+.hero-copy .hero-proof { justify-content: center; }
+.hero-copy h1 { font-size: clamp(2.7rem, 4.8vw, 5rem); }
+
+@media (max-width: 900px) {
+  .hero { min-height: 0; padding: 2rem 0 4rem; }
+  .hero-visual { width: 88vw; }
+  .hero-copy {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    width: 88vw;
+    margin: -10vw auto 0;
+    padding: 1.2rem 0 0;
+    transform: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero { min-height: 0; }
+  .hero-visual { width: 92vw; }
+  .hero-copy { width: 88vw; margin-top: -4vw; }
+}
+
+/* 主圖與首頁文字完全分層：圖片在上、文字在下，禁止覆蓋中央文化圖騰。 */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(2rem, 4vw, 4rem) 0 clamp(4rem, 7vw, 7rem);
+}
+
+.hero::after { display: none; }
+
+.hero-visual {
+  order: 1;
+  flex: 0 0 auto;
+}
+
+.hero-visual figcaption { display: none; }
+
+.hero-copy {
+  position: relative;
+  order: 2;
+  left: auto;
+  bottom: auto;
+  width: min(1040px, 80vw);
+  margin: clamp(2rem, 4vw, 4rem) auto 0;
+  padding: 0;
+  transform: none;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .hero-copy {
+    width: 88vw;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-copy {
+    width: 88vw;
+    margin-top: 1.5rem;
+  }
+}
+
+/* 桌面首頁：文字置於草繩結下方、黃色線框內的原圖留白區。 */
+@media (min-width: 901px) {
+  .hero {
+    position: relative;
+    display: block;
+    padding: clamp(2rem, 4vw, 4rem) 0;
+  }
+
+  .hero-copy {
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    bottom: auto;
+    z-index: 3;
+    width: 60vw;
+    max-width: 980px;
+    margin: 0;
+    padding: 0 2vw;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
+  .hero-copy .eyebrow { margin: 0 0 .45rem; }
+
+  .hero-copy h1 {
+    margin: 0 0 .8rem;
+    font-size: clamp(2.35rem, 3.55vw, 4.25rem);
+    line-height: 1.02;
+  }
+
+  .hero-copy .hero-lead {
+    max-width: 820px;
+    margin: 0 auto;
+    font-size: clamp(.85rem, 1vw, 1.05rem);
+    line-height: 1.65;
+  }
+
+  .hero-copy .hero-actions { margin-top: 1rem; }
+  .hero-copy .button { min-height: 42px; padding: .55rem 1.1rem; }
+  .hero-copy .hero-proof { margin-top: .9rem; }
+}
