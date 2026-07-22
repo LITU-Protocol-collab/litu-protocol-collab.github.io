@@ -13,13 +13,6 @@ navigation?.addEventListener('click', (event) => {
   }
 });
 
-// 手機瀏覽器對頁內錨點的處理不一致，明確將「返回頂端」捲動至頁首。
-document.querySelector('.back-to-top')?.addEventListener('click', (event) => {
-  event.preventDefault();
-  window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-  window.history.replaceState(null, '', '#top');
-});
-
 // 沿用原網站的 Google 多國語言功能：繁中、簡中、英、日、韓、西、法。
 window.googleTranslateElementInit = function googleTranslateElementInit() {
   new window.google.translate.TranslateElement({
